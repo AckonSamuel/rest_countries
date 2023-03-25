@@ -68,11 +68,13 @@ const countriesFetchSlice = createSlice({
   },
 });
 
+const { actions, reducer } = countriesFetchSlice;
+
 export const {
   searchTitle,
   filterRegion,
   search,
   filter
-} = countriesFetchSlice.actions;
+} = actions;
 
-export default countriesFetchSlice;
+export default reducer;

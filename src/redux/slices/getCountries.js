@@ -22,7 +22,7 @@ const countriesFetchSlice = createSlice({
   name: "countries",
   initialState,
   reducers: {
-    title_search: (state, action) => {
+    searchTitle: (state, action) => {
       const filteredCountries = state.countries
       .filter((country) => country.name.official
       .toLowerCase().includes(action.payload.toLowerCase()));
@@ -31,7 +31,7 @@ const countriesFetchSlice = createSlice({
         titleSearch: action.payload === '' ? [] : filteredCountries,
       };
     },
-    region_filter: (state, action) => {
+    filterRegion: (state, action) => {
       const filteredCountries = state.countries
       .filter((country) => country.region
       .lowerCase().includes(action.payload.toLowerCase()));
@@ -67,5 +67,12 @@ const countriesFetchSlice = createSlice({
     });
   },
 });
+
+export const {
+  searchTitle,
+  filterRegion,
+  search,
+  filter
+} = countriesFetchSlice.actions;
 
 export default countriesFetchSlice;

@@ -18,29 +18,54 @@ export const countriesFetch = createAsyncThunk("countries/countriesFetch", async
   return res.data;
 });
 
-const clubsFetchSlice = createSlice({
-  name: "clubs",
+const countriesFetchSlice = createSlice({
+  name: "countries",
   initialState,
   reducers: {
-
+    title_search: (state, action) => {
+      const filteredCountries = state.countries
+      .filter((country) => country.name.official
+      .toLowerCase().includes(action.payload.toLowerCase()));
+      return {
+        ...state,
+        titleSearch: action.payload === '' ? [] : filteredCountries,
+      };
+    },
+    region_filter: (state, action) => {
+      const filteredCountries = state.countries
+      .filter((country) => country.region
+      .lowerCase().includes(action.payload.toLowerCase()));
+      return {
+        ...state,
+        regionFilter: action.payload === '' ? [] : filteredCountries,
+      };
+    },
+    region: (state, action) => ({
+      ...state,
+      search: action.payload,
+    }),
+    filter: (state, action) => ({
+      ...state,
+      filter: action.payload,
+    })
   },
   extraReducers: (builder) => {
-    builder.addCase(clubsFetch.pending, (state) => {
+    builder.addCase(countriesFetch.pending, (state) => {
       state.loading = true;
-      state.clubs = {};
+      state.countries = {};
       state.error = "";
     });
-    builder.addCase(clubsFetch.fulfilled, (state, action) => {
-      state.clubs = action.payload.data;
+    builder.addCase(countriesFetch.fulfilled, (state, action) => {
+      state.countries = action.payload.data;
       state.loading = false;
       state.error = "";
     });
-    builder.addCase(clubsFetch.rejected, (state, action) => {
+    builder.addCase(countriesFetch.rejected, (state, action) => {
       state.error = action.error.message;
       state.loading = false;
-      state.clubs = {};
+      state.countries = {};
     });
   },
 });
 
-export default clubsFetchSlice;
+export default countriesFetchSlice;

@@ -3,38 +3,78 @@ import axios from "axios";
 import BASE_URL from "../../common";
 
 const initialState = {
-  clubs: {},
+  countries: [],
   error: "",
   loading: false,
+  titleSearch: [],
+  regionFilter: [],
+  search: '',
+  filter: '',
 };
 
-export const clubsFetch = createAsyncThunk("clubs/clubsFetch", async () => {
-  const res = await axios.get(`${BASE_URL}/clubs`);
+export const countriesFetch = createAsyncThunk("countries/countriesFetch", async () => {
+  const res = await axios.get(`${BASE_URL}/all`);
 
   return res.data;
 });
 
-const clubsFetchSlice = createSlice({
-  name: "clubs",
+const countriesFetchSlice = createSlice({
+  name: "countries",
   initialState,
-  reducers: {},
+  reducers: {
+    searchTitle: (state, action) => {
+      const filteredCountries = state.countries
+      .filter((country) => country.name.official
+      .toLowerCase().includes(action.payload.toLowerCase()));
+      return {
+        ...state,
+        titleSearch: action.payload === '' ? [] : filteredCountries,
+      };
+    },
+    filterRegion: (state, action) => {
+      const filteredCountries = state.countries
+      .filter((country) => country.region
+      .lowerCase().includes(action.payload.toLowerCase()));
+      return {
+        ...state,
+        regionFilter: action.payload === '' ? [] : filteredCountries,
+      };
+    },
+    region: (state, action) => ({
+      ...state,
+      search: action.payload,
+    }),
+    filter: (state, action) => ({
+      ...state,
+      filter: action.payload,
+    })
+  },
   extraReducers: (builder) => {
-    builder.addCase(clubsFetch.pending, (state) => {
+    builder.addCase(countriesFetch.pending, (state) => {
       state.loading = true;
-      state.clubs = {};
+      state.countries = {};
       state.error = "";
     });
-    builder.addCase(clubsFetch.fulfilled, (state, action) => {
-      state.clubs = action.payload.data;
+    builder.addCase(countriesFetch.fulfilled, (state, action) => {
+      state.countries = action.payload;
       state.loading = false;
       state.error = "";
     });
-    builder.addCase(clubsFetch.rejected, (state, action) => {
+    builder.addCase(countriesFetch.rejected, (state, action) => {
       state.error = action.error.message;
       state.loading = false;
-      state.clubs = {};
+      state.countries = {};
     });
   },
 });
 
-export default clubsFetchSlice;
+const { actions, reducer } = countriesFetchSlice;
+
+export const {
+  searchTitle,
+  filterRegion,
+  search,
+  filter
+} = actions;
+
+export default reducer;

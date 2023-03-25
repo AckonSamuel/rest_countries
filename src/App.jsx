@@ -13,7 +13,13 @@ import CountryList from "./components/Card";
 import Welcome from './components/Welcome';
 
 // redux funtions
-import { countriesFetch } from './redux/slices/getCountries';
+import {
+  countriesFetch,
+  searchTitle,
+  filterRegion,
+  search,
+  filter
+} from './redux/slices/getCountries';
 
 const App = () => {
 
@@ -26,19 +32,41 @@ const App = () => {
   useEffect(() => {
     dispatch(countriesFetch());
   }, [dispatch]);
-  
-  const getRoutes = () => countries.length > 0 ? 
-  <Route exact path="/" element={<CountryList countries={countries}/>} /> :
-  <Route exact path="/" element={<Welcome />} />;
-  
+
+
+  const textListener = (country_name) => {
+    dispatch(searchTitle(country_name));
+    dispatch(search(country_name));
+  };
+
+  const filteredSearch = useSelector((state) => state.countryReducer.nameSearch, shallowEqual);
+  const searchText = useSelector((state) => state.countryReducer.search, shallowEqual);
+
+  if ( filteredSearch.length !== 0) {
+    countries = filteredSearch;
+  }
+
+  const routes = [
+    <Route exact path="/" element={<CountryList countries={countries} />} />,
+  ];
+  const getRoutes = () => {
+
+    if (countries.length > 0) {
+      return routes.values();
+    }
+    else
+      return <Route exact path="/" element={<Welcome />} />;
+  }
+
+
   return (
     <CacheProvider value={cache}>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Routes>
-{getRoutes()}
-      </Routes>
-    </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Routes>
+          {getRoutes()}
+        </Routes>
+      </ThemeProvider>
     </CacheProvider>
   );
 }

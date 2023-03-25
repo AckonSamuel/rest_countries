@@ -6,7 +6,7 @@ const initialState = {
   countries: [],
   error: "",
   loading: false,
-  titleSearch: [],
+  nameSearch: [],
   regionFilter: [],
   search: '',
   filter: '',
@@ -28,7 +28,7 @@ const countriesFetchSlice = createSlice({
       .toLowerCase().includes(action.payload.toLowerCase()));
       return {
         ...state,
-        titleSearch: action.payload === '' ? [] : filteredCountries,
+        nameSearch: action.payload === '' ? [] : filteredCountries,
       };
     },
     filterRegion: (state, action) => {

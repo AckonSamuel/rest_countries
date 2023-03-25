@@ -1,3 +1,6 @@
+import { useEffect } from 'react';
+import { useSelector, useDispatch, shallowEqual } from 'react-redux';
+
 // react-router components
 import { Routes, Route } from "react-router-dom";
 
@@ -6,33 +9,30 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CacheProvider } from '@emotion/react';
 import CssBaseline from "@mui/material/CssBaseline";
 import createEmotionCache from "./createEmotionCache";
+import CountryList from "./components/Card";
 
-import routes from "./routes";
-
+// redux funtions
+import { countriesFetch } from './redux/slices/getCountries';
 
 const App = () => {
 
   const cache = createEmotionCache();
   const theme = createTheme();
 
-  const getRoutes = (allRoutes) =>
-    allRoutes.map((route) => {
-      if (route.collapse) {
-        return getRoutes(route.collapse);
-      }
+  const dispatch = useDispatch();
+  let countries = useSelector((state) => state.countryReducer.countries, shallowEqual);
 
-      if (route.route) {
-        return <Route exact path={route.route} element={route.component} key={route.key} />;
-      }
-
-      return null;
-    });
-
+  useEffect(() => {
+    dispatch(countriesFetch());
+  }, []);
+  
   return (
     <CacheProvider value={cache}>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Routes>{getRoutes(routes)}</Routes>
+      <Routes>
+        <Route exact path="/" element={<CountryList countries={countries}/>} />
+      </Routes>
     </ThemeProvider>
     </CacheProvider>
   );

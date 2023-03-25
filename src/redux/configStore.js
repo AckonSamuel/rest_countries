@@ -7,7 +7,7 @@ const MyMiddlewares = [logger, thunk];
 
 const store = configureStore({
     reducer: {
-        rootReducer,
+        countryReducer: rootReducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(MyMiddlewares),
 }, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());

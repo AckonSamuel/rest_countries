@@ -3,13 +3,17 @@ import axios from "axios";
 import BASE_URL from "../../common";
 
 const initialState = {
-  clubs: {},
+  countries: [],
   error: "",
   loading: false,
+  titleSearch: [],
+  regionFilter: [],
+  search: '',
+  filter: '',
 };
 
-export const clubsFetch = createAsyncThunk("clubs/clubsFetch", async () => {
-  const res = await axios.get(`${BASE_URL}/clubs`);
+export const countriesFetch = createAsyncThunk("countries/countriesFetch", async () => {
+  const res = await axios.get(`${BASE_URL}/all`);
 
   return res.data;
 });
@@ -17,7 +21,9 @@ export const clubsFetch = createAsyncThunk("clubs/clubsFetch", async () => {
 const clubsFetchSlice = createSlice({
   name: "clubs",
   initialState,
-  reducers: {},
+  reducers: {
+
+  },
   extraReducers: (builder) => {
     builder.addCase(clubsFetch.pending, (state) => {
       state.loading = true;

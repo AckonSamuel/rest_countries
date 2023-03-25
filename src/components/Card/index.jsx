@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 import CountryCard from './CountryCard';
 
-const CountryList = ({ countries }) => 
+const CountryList = ({ countries }) => {
+
+    return (
 <section id="country-list">
-    { countries.map(country => (
+    { countries.length && countries.map(country => (
         <CountryCard
         key={country.name.official}
         officialName={country.name.official}
@@ -14,7 +16,7 @@ const CountryList = ({ countries }) =>
         population={country.population}
         />
     ))}
-</section>;
+</section>)}
 
 CountryList.propTypes = {
     countries: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,

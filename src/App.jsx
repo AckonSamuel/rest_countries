@@ -10,6 +10,7 @@ import { CacheProvider } from '@emotion/react';
 import CssBaseline from "@mui/material/CssBaseline";
 import createEmotionCache from "./createEmotionCache";
 import CountryList from "./components/Card";
+import Welcome from './components/Welcome';
 
 // redux funtions
 import { countriesFetch } from './redux/slices/getCountries';
@@ -24,14 +25,18 @@ const App = () => {
 
   useEffect(() => {
     dispatch(countriesFetch());
-  }, []);
+  }, [dispatch]);
+  
+  const getRoutes = () => countries.length > 0 ? 
+  <Route exact path="/" element={<CountryList countries={countries}/>} /> :
+  <Route exact path="/" element={<Welcome />} />;
   
   return (
     <CacheProvider value={cache}>
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Routes>
-        <Route exact path="/" element={<CountryList countries={countries}/>} />
+{getRoutes()}
       </Routes>
     </ThemeProvider>
     </CacheProvider>

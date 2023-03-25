@@ -25,7 +25,8 @@ const CountryCard = ({
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    height="140"
+                    height="100%"
+                    width="100%"
                     image={flagsvg}
                     alt={flagsalt}
                     onClick={() => goTo(`/details/${officialName}`)}
@@ -46,13 +47,12 @@ const CountryCard = ({
 };
 
 CountryCard.propTypes = {
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
+    officialName: PropTypes.string.isRequired,
     flagsalt: PropTypes.string.isRequired,
     flagsvg: PropTypes.string.isRequired,
     region: PropTypes.string.isRequired,
     population: PropTypes.number.isRequired,
-    capital: PropTypes.string.isRequired,
+    // capital: PropTypes.string.isRequired,
 };
 
 export default CountryCard;

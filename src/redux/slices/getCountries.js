@@ -56,7 +56,7 @@ const countriesFetchSlice = createSlice({
       state.error = "";
     });
     builder.addCase(countriesFetch.fulfilled, (state, action) => {
-      state.countries = action.payload.data;
+      state.countries = action.payload;
       state.loading = false;
       state.error = "";
     });

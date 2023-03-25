@@ -9,7 +9,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CacheProvider } from '@emotion/react';
 import CssBaseline from "@mui/material/CssBaseline";
 import createEmotionCache from "./createEmotionCache";
-import CountryList from "./components/Card";
+import Homepage from './components/Homepage';
 import Welcome from './components/Welcome';
 
 // redux funtions
@@ -47,7 +47,13 @@ const App = () => {
   }
 
   const routes = [
-    <Route exact path="/" element={<CountryList countries={countries} />} />,
+    <Route exact path="/" element={
+    <Homepage 
+    filteredSearch={filteredSearch} 
+    searchText={searchText} 
+    countries={countries}
+    textListener={textListener} 
+    />} />,
   ];
   const getRoutes = () => {
 

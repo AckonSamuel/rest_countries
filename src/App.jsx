@@ -39,26 +39,37 @@ const App = () => {
     dispatch(search(country_name));
   };
 
+  const filterListener = (region) => {
+    dispatch(filterRegion(region));
+    dispatch(filter(region));
+  }
+
   const filteredSearch = useSelector((state) => state.countryReducer.nameSearch, shallowEqual);
   const searchText = useSelector((state) => state.countryReducer.search, shallowEqual);
+  const filterContinent = useSelector((state) => state.countryReducer.filter, shallowEqual);
+  const filteredRegion = useSelector((state) => state.countryReducer.regionFilter, shallowEqual);
 
-  if ( filteredSearch.length !== 0) {
+
+  if ( filteredSearch.length !== 0  && filteredRegion.length === 0 ) {
+    countries = filteredSearch;
+  } else if ( filteredSearch.length === 0  && filteredRegion.length !== 0 ) {
+    countries = filteredRegion;
+  } else if ( filteredSearch.length !== 0 && filteredRegion.length !== 0) {
     countries = filteredSearch;
   }
 
-  const routes = [
-    <Route exact path="/" element={
-    <Homepage 
-    filteredSearch={filteredSearch} 
-    searchText={searchText} 
-    countries={countries}
-    textListener={textListener} 
-    />} />,
-  ];
   const getRoutes = () => {
 
     if (countries.length > 0) {
-      return routes.values();
+      return <Route exact path="/" element={
+        <Homepage 
+        filteredSearch={filteredSearch}
+        searchText={searchText}
+        filterContinent={filterContinent}
+        filterListener={filterListener}
+        countries={countries}
+        textListener={textListener} 
+        />} key="okay"/>
     }
     else
       return <Route exact path="/" element={<Welcome />} />;

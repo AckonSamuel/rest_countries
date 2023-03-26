@@ -20,7 +20,7 @@ const Navbar = () => {
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ mr: 2 }}
+            sx={{ transform: 'rotate(140deg)', marginRight: -2 }}
           >
             <Brightness3Icon />
           </IconButton>

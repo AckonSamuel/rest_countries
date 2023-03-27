@@ -9,6 +9,7 @@ const Data = ({ country }) => {
     const countries = useSelector((state) => state.countryReducer.countries, shallowEqual);
     const {
         name,
+        cca2,
         altSpellings,
         region,
         population,
@@ -32,13 +33,20 @@ const Data = ({ country }) => {
     const filterCountries = countries.filter((country) => country.region === region);
     filterCountries.length > 0 && extractCountry(filterCountries);
 
+    const native  = () => {
+        const newAlt = altSpellings.filter((spell) => spell !== cca2 && spell !== name.offical);
+        const newObj = Object.values(name.nativeName).map(nameObj => nameObj.official);
+        return newAlt.length > 0 && newAlt.filter((obn) => !newObj.includes(obn))
+       // && !spell.includes(Object.values(name.nativeName).map((na) => na.official).join())) : Object.values(name.nativeName)[0].common}
+    };
+
     return (
         <Box>
             <Typography variant="h1" component="h2">
                 {name.common}
             </Typography>
             <Typography variant="body2" color="text.secondary" className="first-data">
-                Native Name: {altSpellings[1] ? altSpellings[1] : Object.values(name.nativeName)[0].common} <br />
+                Native Name: {Object.values(name.nativeName)[0].common} <br />
                 Population: {population.toLocaleString()} <br />
                 Region: {region} <br />
                 Sub Region: {subregion} <br />

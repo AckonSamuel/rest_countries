@@ -1,15 +1,15 @@
-import { useSelector } from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
+import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import BorderCountries from './BorderCountries';
 
-const Data = ({country}) => {
-    const filterText = useSelector((state) => state.countryReducer.filter);
-    const countries = useSelector((state) => state.countryReducer.countries);
-    const filterArr = useSelector((state) => state.countryReducer.regionFiler);
+const Data = ({ country }) => {
 
+    const countries = useSelector((state) => state.countryReducer.countries, shallowEqual);
     const {
-        name, 
+        name,
+        altSpellings,
         region,
         population,
         subregion,
@@ -20,19 +20,17 @@ const Data = ({country}) => {
         tld
     } = country;
 
-    const borderArr = [];
+    let borderArr = [];
 
     const extractCountry = (filterCo) => {
         filterCo.forEach((country) => {
-            borders.includes(country.fifa) && borderArr.push(country.name.common);
-    })};
+            borders && borders.includes(country.cca3) && borderArr.push(country.name.common);
+            console.log(borderArr);
+        })
+    };
 
-    if (region.includes(filterText)) {
-        extractCountry(filterArr);
-    } else {
-        const filterCountries = countries.filter((country) => country.region === region);
-        extractCountry(filterCountries);
-    }
+    const filterCountries = countries.filter((country) => country.region === region);
+    filterCountries.length > 0 && extractCountry(filterCountries);
 
     return (
         <Box>
@@ -40,28 +38,30 @@ const Data = ({country}) => {
                 {name.common}
             </Typography>
             <Typography variant="body2" color="text.secondary" className="first-data">
-                        Native Name: {Object.values(name.nativeName)[0].common} <br />
-                        Population: {population.toLocaleString()} <br />
-                        Region: {region} <br />
-                        Sub Region: {subregion} <br />
-                        Capital: {capital}
+                Native Name: {altSpellings[1] ? altSpellings[1] : Object.values(name.nativeName)[0].common} <br />
+                Population: {population.toLocaleString()} <br />
+                Region: {region} <br />
+                Sub Region: {subregion} <br />
+                Capital: {capital}
             </Typography>
             <Typography variant="body2" color="text.secondary" className="first-data">
-                        Top Level Domain: {tld} <br />
-                        Currencies: {Object.values(currencies).map(curr => curr.name).join(", ")} <br />
-                        Languages: {Object.values(languages).join(", ")} <br />
+                Top Level Domain: {tld[0]} <br />
+                Currencies: {Object.values(currencies).map(curr => curr.name).join(", ")} <br />
+                Languages: {Object.values(languages).join(", ")} <br />
             </Typography>
-            <Box>
-                <Typography>Border Countries:</Typography>
-                
-                    { borderArr.length > 0 && <BorderCountries borderArr={borderArr} />}     
-            </Box>
+            {borderArr.length > 0 &&
+                <Box>
+                    <Typography>Border Countries:</Typography>
+                    <BorderCountries borderArr={borderArr} />
+                </Box>
+            }
         </Box>
     )
 };
 
 Data.propTypes = {
     country: PropTypes.objectOf(PropTypes.any).isRequired,
+    countries: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
 };
 
 export default Data;

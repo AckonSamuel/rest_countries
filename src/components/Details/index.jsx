@@ -11,7 +11,7 @@ const Details = ({ countries }) => {
             {
             countries
             .filter((country) => country.name.common === common )
-            .map((country) => <Data country={country} />)
+            .map((country) => <Data country={country} countries={countries} />)
             }
         </Box>
     )
@@ -19,7 +19,7 @@ const Details = ({ countries }) => {
 
 
 Details.propTypes = {
-    country: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
+    countries: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
 };
 
 export default Details;

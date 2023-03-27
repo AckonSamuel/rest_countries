@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
-
 // react-router components
 import { Routes, Route } from "react-router-dom";
 
@@ -9,8 +8,11 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { CacheProvider } from '@emotion/react';
 import CssBaseline from "@mui/material/CssBaseline";
 import createEmotionCache from "./createEmotionCache";
+
+// react components
 import Homepage from './components/Homepage';
 import Welcome from './components/Welcome';
+import Details from './components/Details';
 
 // redux funtions
 import {
@@ -61,7 +63,8 @@ const App = () => {
   const getRoutes = () => {
 
     if (countries.length > 0) {
-      return <Route exact path="/" element={
+      return <Routes>
+        <Route exact path="/" element={
         <Homepage 
         filteredSearch={filteredSearch}
         searchText={searchText}
@@ -70,9 +73,11 @@ const App = () => {
         countries={countries}
         textListener={textListener} 
         />} key="okay"/>
+        <Route exact path="/details/:common" element={<Details countries={countries} />} />;
+        </Routes>
     }
     else
-      return <Route exact path="/" element={<Welcome />} />;
+      return <Routes><Route exact path="/" element={<Welcome />} /></Routes>
   }
 
 
@@ -80,9 +85,7 @@ const App = () => {
     <CacheProvider value={cache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Routes>
           {getRoutes()}
-        </Routes>
       </ThemeProvider>
     </CacheProvider>
   );

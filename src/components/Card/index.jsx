@@ -10,7 +10,7 @@ const CountryList = ({ countries, searchText, filteredSearch }) => {
     { countries.length && countries.map(country => (
         <CountryCard
         key={country.name.official}
-        officialName={country.name.official}
+        officialName={country.name.common}
         flagsalt={country.flags.alt}
         flagsvg={country.flags.svg}
         region={country.region}

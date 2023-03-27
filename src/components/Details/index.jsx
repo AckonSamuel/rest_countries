@@ -1,18 +1,25 @@
+import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Data from './Data';
 
-const Details = ({ country }) => {
+const Details = ({ countries }) => {
+    const { common } = useParams();
+
     return (
         <Box>
-            <Data country={country} />
+            {
+            countries
+            .filter((country) => country.name.common === common )
+            .map((country) => <Data country={country} />)
+            }
         </Box>
     )
 };
 
 
 Details.propTypes = {
-    country: PropTypes.objectOf(PropTypes.any).isRequired,
+    country: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
 };
 
 export default Details;

@@ -6,9 +6,9 @@ import { styled } from '@mui/material/styles';
 import ModeButton from './ModeButton';
 
 const Item = styled(AppBar)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#2B3844' : '#fff',
-  color: "#FFFFFF",
-  boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.0562443)",
+  backgroundColor: theme.palette.background.primary,
+  color: theme.palette.text.main,
+  boxShadow: theme.palette.shadow.secondary,
 }));
 
 const Navbar = () => {

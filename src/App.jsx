@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, createContext, useMemo, useEffect } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 // react-router components
 import { Routes, Route } from "react-router-dom";
@@ -23,11 +23,35 @@ import {
   filter
 } from './redux/slices/getCountries';
 
+export const ColorModeContext = createContext({ toggleColorMode: () => {} });
+
 const App = () => {
 
   const cache = createEmotionCache();
-  const theme = createTheme();
 
+  // setting up theme
+
+  const [mode, setMode] = useState('light');
+
+  const colorMode = useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+      },
+    }),
+    [],
+  );
+
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode,
+        },
+      }),
+    [mode],
+  );
+ //
   const dispatch = useDispatch();
   let countries = useSelector((state) => state.countryReducer.countries, shallowEqual);
 
@@ -82,12 +106,14 @@ const App = () => {
 
 
   return (
+    <ColorModeContext.Provider value={colorMode}>
     <CacheProvider value={cache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
           {getRoutes()}
       </ThemeProvider>
     </CacheProvider>
+    </ColorModeContext.Provider>
   );
 }
 

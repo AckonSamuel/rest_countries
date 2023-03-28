@@ -5,25 +5,27 @@ import Stack from '@mui/material/Stack';
 import Image from 'mui-image';
 import Data from './Data';
 import Return from './Return';
+import Navbar from './../Navbar';
 
 const Details = ({ countries }) => {
     const { common } = useParams();
 
     return (
+        <>
+        <Navbar />
         <Container>
             <Return />
-            {
-            countries
-            .filter((country) => country.name.common === common )
-            .map((country) => <Container>
-                <Stack direction="row">
-                <Image src={country.flags.svg} />
-                <Data country={country} countries={countries} />
-                </Stack>
-            </Container>
-            )
-            }
+            {countries
+                .filter((country) => country.name.common === common)
+                .map((country) => <Container>
+                    <Stack direction="row">
+                        <Image src={country.flags.svg} />
+                        <Data country={country} countries={countries} />
+                    </Stack>
+                </Container>
+                )}
         </Container>
+        </>
     )
 };
 

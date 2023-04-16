@@ -6,6 +6,7 @@ import Image from 'mui-image';
 import Data from './Data';
 import Return from './Return';
 import Navbar from './../Navbar';
+import StyledContainer from './../Homepage';
 
 const Details = ({ countries }) => {
     const { common } = useParams();
@@ -13,18 +14,18 @@ const Details = ({ countries }) => {
     return (
         <>
         <Navbar />
-        <Container>
+        <StyledContainer>
             <Return />
             {countries
                 .filter((country) => country.name.common === common)
-                .map((country) => <Container>
+                .map((country) => <Container key={common}>
                     <Stack direction="row">
                         <Image src={country.flags.svg} />
                         <Data country={country} countries={countries} />
                     </Stack>
                 </Container>
                 )}
-        </Container>
+        </StyledContainer>
         </>
     )
 };

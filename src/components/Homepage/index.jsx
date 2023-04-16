@@ -1,15 +1,22 @@
 import PropTypes from 'prop-types';
 import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
+import { styled } from '@mui/material/styles';
 import CountryList from '../Card';
 import Searchbar from '../Searchbar';
 import SelectFilter from '../SelectFilter';
 import Navbar from '../Navbar';
 
+export const StyledContainer = styled(Container)(({ theme }) => ({
+    backgroundColor: theme.palette.background.default,
+
+}));
+
 const Homepage = ({ countries, textListener, filteredSearch, filterContinent, filterListener, searchText }) => {
+    console.table(countries)
     return (
         <><Navbar />
-        <Container>
+        <StyledContainer>
             <Stack spacing={2} sx={{ marginTop: 2 }}>
                 <Searchbar textListener={textListener} searchText={searchText} />
                 <SelectFilter filterListener={filterListener} filterContinent={filterContinent} />
@@ -18,7 +25,7 @@ const Homepage = ({ countries, textListener, filteredSearch, filterContinent, fi
                     searchText={searchText}
                     filteredSearch={filteredSearch} />
             </Stack>
-        </Container></>
+        </StyledContainer></>
     )
 };
 

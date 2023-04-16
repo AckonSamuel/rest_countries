@@ -69,11 +69,11 @@ const App = () => {
   const filteredRegion = useSelector((state) => state.countryReducer.regionFilter, shallowEqual);
 
 
-  if ( filteredSearch.length !== 0  && filteredRegion.length === 0 ) {
+  if ( filteredSearch && filteredSearch.length !== 0  && filteredRegion.length === 0 ) {
     countries = filteredSearch;
-  } else if ( filteredSearch.length === 0  && filteredRegion.length !== 0 ) {
+  } else if ( filteredSearch && filteredSearch.length === 0  && filteredRegion.length !== 0 ) {
     countries = filteredRegion;
-  } else if ( filteredSearch.length !== 0 && filteredRegion.length !== 0) {
+  } else if ( filteredSearch && filteredSearch.length !== 0 && filteredRegion.length !== 0) {
     countries = filteredSearch;
   }
 
@@ -90,7 +90,7 @@ const App = () => {
         countries={countries}
         textListener={textListener} 
         />} key="okay"/>
-        <Route exact path="/details/:common" element={<Details countries={countries} />} />;
+        <Route path="/details/:common" element={<Details countries={countries} />} />;
         </Routes>
     }
     else

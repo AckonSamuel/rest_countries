@@ -6,7 +6,7 @@ import Image from 'mui-image';
 import Data from './Data';
 import Return from './Return';
 import Navbar from './../Navbar';
-import StyledContainer from './../Homepage';
+import StyledContainer from '../StyledContainer';
 
 const Details = ({ countries }) => {
     const { common } = useParams();

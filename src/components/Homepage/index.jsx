@@ -6,14 +6,10 @@ import CountryList from '../Card';
 import Searchbar from '../Searchbar';
 import SelectFilter from '../SelectFilter';
 import Navbar from '../Navbar';
-
-export const StyledContainer = styled(Container)(({ theme }) => ({
-    backgroundColor: theme.palette.background.default,
-
-}));
+import StyledContainer from '../StyledContainer';
 
 const Homepage = ({ countries, textListener, filteredSearch, filterContinent, filterListener, searchText }) => {
-    console.table(countries)
+    console.log(countries)
     return (
         <><Navbar />
         <StyledContainer>

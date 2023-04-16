@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
+import pxToRem from '../../assets/theme/pxToRem';
 
 const CountryCard = ({
     officialName,
@@ -21,17 +22,19 @@ const CountryCard = ({
     };
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ width: pxToRem(264), height: pxToRem(336) }}>
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    height="100%"
+                    sx={{ height: pxToRem(160) }}
                     width="100%"
                     image={flagsvg}
                     alt={flagsalt}
                     onClick={() => goTo(`/details/${officialName}`)}
                 />
-                <CardContent>
+                <CardContent 
+                sx={{ height: pxToRem(176) }}
+                >
                     <Typography gutterBottom variant="h5" component="div">
                         {officialName}
                     </Typography>

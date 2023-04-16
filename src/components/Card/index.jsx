@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
+import Grid from '@mui/material/Grid';
 import CountryCard from './CountryCard';
+import pxToRem from '../../assets/theme/pxToRem';
 
 const CountryList = ({ countries, searchText, filteredSearch }) => {
     if (filteredSearch && filteredSearch.length === 0 && searchText.length !== 0) {
@@ -7,7 +9,12 @@ const CountryList = ({ countries, searchText, filteredSearch }) => {
     }
     return (
 <section id="country-list">
+    <Grid container rowSpacing={pxToRem(60)}
+    columnSpacing={pxToRem(75)}
+    sx={{ width: '100%' }}>
+    
     { countries && countries.length && countries.map(country => (
+        <Grid item xs={12} lg={3}>
         <CountryCard
         key={country.name.official}
         officialName={country.name.common}
@@ -17,7 +24,9 @@ const CountryList = ({ countries, searchText, filteredSearch }) => {
         capital={country.capital}
         population={country.population}
         />
+        </Grid>
     ))}
+    </Grid>
 </section>)}
 
 CountryList.propTypes = {

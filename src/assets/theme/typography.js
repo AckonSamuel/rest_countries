@@ -1,4 +1,5 @@
 import colors from './colors';
+import pxToRem from './pxToRem';
 
 const { text } = colors;
 
@@ -14,7 +15,7 @@ const baseHeadingProperties = {
     fontFamily: baseProperties.fontFamily,
     color: text.main,
     fontWeight: baseProperties.fontWeightBold,
-    lineHeight: "33px",
+    lineHeight: pxToRem(33),
 };
 
 // const lineHeight 

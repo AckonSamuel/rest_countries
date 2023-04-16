@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import CountryList from '../Card';
 import Searchbar from '../Searchbar';
@@ -11,17 +12,17 @@ import StyledContainer from '../StyledContainer';
 const Homepage = ({ countries, textListener, filteredSearch, filterContinent, filterListener, searchText }) => {
     console.log(countries)
     return (
-        <><Navbar />
-        <StyledContainer>
-            <Stack spacing={2} sx={{ marginTop: 2 }}>
+        <>
+            <Navbar />
+            <StyledContainer>
                 <Searchbar textListener={textListener} searchText={searchText} />
                 <SelectFilter filterListener={filterListener} filterContinent={filterContinent} />
                 <CountryList
                     countries={countries}
                     searchText={searchText}
                     filteredSearch={filteredSearch} />
-            </Stack>
-        </StyledContainer></>
+            </StyledContainer>
+        </>
     )
 };
 

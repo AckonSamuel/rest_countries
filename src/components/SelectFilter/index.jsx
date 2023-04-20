@@ -4,12 +4,13 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import pxToRem from '../../assets/theme/pxToRem';
 
 const SelectFilter = ({ filterListener, filterContinent }) => {
   
   return (
     <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
+      <FormControl sx={{ width: pxToRem(200)}}>
         <InputLabel id="demo-simple-select-label">Filter by Region</InputLabel>
         <Select
           labelId="demo-simple-select-label"

@@ -5,10 +5,9 @@ import pxToRem from '../../assets/theme/pxToRem';
 
 const StyledContainer = styled(Box)(({ theme }) => ({
     backgroundColor: theme.palette.background.default,
-    paddingLeft: pxToRem(60),
-    paddingRight: pxToRem(0),
+    paddingLeft: pxToRem(40),
+    paddingRight: pxToRem(40),
     margin: 0,
-    outline: 'solid red',
 }));
 
 export default StyledContainer;

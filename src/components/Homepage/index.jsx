@@ -8,15 +8,22 @@ import Searchbar from '../Searchbar';
 import SelectFilter from '../SelectFilter';
 import Navbar from '../Navbar';
 import StyledContainer from '../StyledContainer';
+import pxToRem from '../../assets/theme/pxToRem';
 
 const Homepage = ({ countries, textListener, filteredSearch, filterContinent, filterListener, searchText }) => {
-    console.log(countries)
+
     return (
         <>
             <Navbar />
             <StyledContainer>
+                <Box sx={{
+                    display: 'flex',
+                    flex: 1,
+                    justifyContent: 'space-between',
+                }}>
                 <Searchbar textListener={textListener} searchText={searchText} />
                 <SelectFilter filterListener={filterListener} filterContinent={filterContinent} />
+                </Box>
                 <CountryList
                     countries={countries}
                     searchText={searchText}

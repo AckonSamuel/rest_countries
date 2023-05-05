@@ -11,9 +11,9 @@ const SelectFilter = ({ filterListener, filterContinent }) => {
   const theme = useTheme();
 
   return (
-    <Box sx={{ width: 120,
+    <Box sx={{ width: 120, marginBottom: pxToRem(48),
     [theme.breakpoints.up('lg')]: {
-      marginLeft: 'auto', marginRight: pxToRem(78)
+      marginLeft: 'auto', marginRight: pxToRem(78),  marginTop: pxToRem(48),
     }}}>
       <FormControl sx={{ width: pxToRem(200)}}>
         <InputLabel id="demo-simple-select-label">Filter by Region</InputLabel>

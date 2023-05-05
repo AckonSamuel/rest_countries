@@ -1,11 +1,9 @@
 import PropTypes from 'prop-types';
-import Grid from '@mui/material/Grid';
 import CountryCard from './CountryCard';
-import pxToRem from '../../assets/theme/pxToRem';
 
 const CountryList = ({ countries, searchText, filteredSearch }) => {
     if (filteredSearch && filteredSearch.length === 0 && searchText.length !== 0) {
-        return <h1>Oops! Search not found</h1>;
+        return <h1 class="error-msg">Oops! Search not found</h1>;
     }
     return (
 <section id="country-list">

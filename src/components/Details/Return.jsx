@@ -11,7 +11,7 @@ const Return = () => {
     };
 
     return (
-        <Box>
+        <Box width='100%'>
         <Button onClick={() => goHome()}>
             <ArrowBackIcon />
             Back

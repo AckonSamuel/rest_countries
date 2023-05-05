@@ -21,6 +21,16 @@ code {
 #country-list {
   display: flex;
   flex-wrap: wrap;
+  padding: 0;
   justify-content: space-between;
   flex: '0 0 100%',
 }
+
+/* #country-list > * {
+  order: 0;
+} */
+
+/* #country-list > :last-child {
+  order: 1;
+  border: 2px solid #000;
+} */

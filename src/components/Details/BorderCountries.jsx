@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Paper from '@mui/material/Paper';
-import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -9,13 +9,15 @@ const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: 'center',
+  marginRight: '1rem', 
+  marginBottom: '1rem',
   color: theme.palette.text.secondary,
 }));
 
 const BorderCountries = ({ borderArr }) => (
-      <Stack direction="row" spacing={2}>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: "space-betweem",}}>
         { borderArr.map((country) => <Item>{country}</Item> )}
-      </Stack>
+      </Box>
   );
 
 

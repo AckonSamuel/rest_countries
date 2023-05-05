@@ -41,8 +41,8 @@ const Data = ({ country }) => {
     };
 
     return (
-        <Box>
-            <Typography variant="h1" component="h2">
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}>
+            <Typography variant="h1" component="h2" sx={{ flex: "0 0 100%"}}>
                 {name.common}
             </Typography>
             <Typography variant="body2" color="text.secondary" className="first-data">
@@ -58,7 +58,7 @@ const Data = ({ country }) => {
                 Languages: {Object.values(languages).join(", ")} <br />
             </Typography>
             {borderArr.length > 0 &&
-                <Box>
+                <Box sx={{ flex: '0 0 100%'}}>
                     <Typography>Border Countries:</Typography>
                     <BorderCountries borderArr={borderArr} />
                 </Box>

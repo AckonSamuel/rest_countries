@@ -1,12 +1,13 @@
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Image from 'mui-image';
 import Data from './Data';
 import Return from './Return';
 import Navbar from './../Navbar';
 import StyledContainer from '../StyledContainer';
+import pxToRem from '../../assets/theme/pxToRem';
 
 const Details = ({ countries }) => {
     const { common } = useParams();
@@ -18,12 +19,16 @@ const Details = ({ countries }) => {
             <Return />
             {countries
                 .filter((country) => country.name.common === common)
-                .map((country) => <Container key={common}>
-                    <Stack direction="row">
-                        <Image src={country.flags.svg} />
-                        <Data country={country} countries={countries} />
-                    </Stack>
-                </Container>
+                .map((country) =>
+                    <Grid container key={common} columnGap={pxToRem(120)} 
+                    sx={{ flex: "0, 0, 100%", margin: 0, padding: 0, boxSizing: 'border-box'}}>
+                        <Grid item xs={12} lg={5}>
+                        <Image src={country.flags.svg} minwidth={pxToRem(560)} height={pxToRem(401)} />
+                        </Grid>
+                        <Grid item xs={12} lg={5}>
+                        <Data country={country} countries={countries} maxWidth={pxToRem(600)} maxHeight={pxToRem(320)}/>
+                        </Grid>
+                    </Grid>
                 )}
         </StyledContainer>
         </>

@@ -9,13 +9,8 @@ const CountryList = ({ countries, searchText, filteredSearch }) => {
     }
     return (
 <section id="country-list">
-    <Grid container rowSpacing={pxToRem(30)}
-    columnSpacing={pxToRem(90)}
-    justifyItems="space-between"
-    sx={{ width: '100%' }}>
-    
+
     { countries && countries.length && countries.map(country => (
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={2}>
         <CountryCard
         key={country.name.official}
         officialName={country.name.common}
@@ -25,9 +20,7 @@ const CountryList = ({ countries, searchText, filteredSearch }) => {
         capital={country.capital}
         population={country.population}
         />
-        </Grid>
     ))}
-    </Grid>
 </section>)}
 
 CountryList.propTypes = {

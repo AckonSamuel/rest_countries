@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#country-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex: '0 0 100%',
+}

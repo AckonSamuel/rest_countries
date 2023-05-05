@@ -22,7 +22,7 @@ const CountryCard = ({
     };
 
     return (
-        <Card sx={{ width: pxToRem(264), height: pxToRem(336) }}>
+        <Card sx={{ width: pxToRem(264), height: pxToRem(336)}}>
             <CardActionArea>
                 <CardMedia
                     component="img"

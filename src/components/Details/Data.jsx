@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import BorderCountries from './BorderCountries';
+import pxToRem from '../../assets/theme/pxToRem';
 
 const Data = ({ country }) => {
 
@@ -40,26 +41,47 @@ const Data = ({ country }) => {
        // && !spell.includes(Object.values(name.nativeName).map((na) => na.official).join())) : Object.values(name.nativeName)[0].common}
     };
 
+    const countryData1 = {
+        'Native name': Object.values(name.nativeName)[0].common,
+        'Population': population.toLocaleString(),
+        'Region': region,
+        'Sub Region': subregion,
+        'Capital': capital,
+    };
+
+    const countryData2 = {
+        'Top Level Domain': tld[0],
+        'Currencies': Object.values(currencies).map(curr => curr.name).join(", "),
+        'Languages': Object.values(languages).join(", "),
+    };
+
+    const putTrans = (data) => {
+        let properties = [];
+        for (const property in data) {
+          properties.push(
+            <span key={property}>
+              <strong>{property}:</strong> {data[property]}
+              <br />
+            </span>
+          );
+        }
+        return properties;
+      };
+
     return (
         <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}>
-            <Typography variant="h1" component="h2" sx={{ flex: "0 0 100%"}}>
+            <Typography variant="detailsTitle" component="h2" sx={{ flex: "0 0 100%", marginBottom: pxToRem(23),}}>
                 {name.common}
             </Typography>
-            <Typography variant="body2" color="text.secondary" className="first-data">
-                Native Name: {Object.values(name.nativeName)[0].common} <br />
-                Population: {population.toLocaleString()} <br />
-                Region: {region} <br />
-                Sub Region: {subregion} <br />
-                Capital: {capital}
+            <Typography variant="detailsContent" className="first-data">
+                {putTrans(countryData1)}
             </Typography>
-            <Typography variant="body2" color="text.secondary" className="first-data">
-                Top Level Domain: {tld[0]} <br />
-                Currencies: {Object.values(currencies).map(curr => curr.name).join(", ")} <br />
-                Languages: {Object.values(languages).join(", ")} <br />
+            <Typography variant="detailsContent" className="first-data">
+            {putTrans(countryData2)}
             </Typography>
             {borderArr.length > 0 &&
-                <Box sx={{ flex: '0 0 100%'}}>
-                    <Typography>Border Countries:</Typography>
+                <Box sx={{ flex: '0 0 100%', marginTop: pxToRem(70)}}>
+                    <Typography variant="detailsContent"><strong>Border Countries:</strong></Typography>
                     <BorderCountries borderArr={borderArr} />
                 </Box>
             }

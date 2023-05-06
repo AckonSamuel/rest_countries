@@ -35,13 +35,13 @@ const CountryCard = ({
                 <CardContent 
                 sx={{ height: pxToRem(176) }}
                 >
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography gutterBottom variant="cardTitle" component="div">
                         {officialName}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        Population: {population} <br />
-                        Region: {region} <br />
-                        Capital: {capital}
+                        <strong>Population:</strong> {population.toLocaleString()} <br />
+                        <strong>Region: </strong> {region} <br />
+                        <strong>Capital:</strong> {capital}
                     </Typography>
                 </CardContent>
             </CardActionArea>

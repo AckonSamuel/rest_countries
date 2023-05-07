@@ -1,15 +1,21 @@
 import PropTypes from 'prop-types';
+import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import pxToRem from '../../assets/theme/pxToRem';
 
 const SelectFilter = ({ filterListener, filterContinent }) => {
-  
+  const theme = useTheme();
+
   return (
-    <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
+    <Box sx={{ width: 120, marginBottom: pxToRem(48),
+    [theme.breakpoints.up('lg')]: {
+      marginLeft: 'auto', marginRight: pxToRem(78),  marginTop: pxToRem(48),
+    }}}>
+      <FormControl sx={{ width: pxToRem(200)}}>
         <InputLabel id="demo-simple-select-label">Filter by Region</InputLabel>
         <Select
           labelId="demo-simple-select-label"

@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
+import { useState, createContext, useMemo, useEffect } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 // react-router components
 import { Routes, Route } from "react-router-dom";
 
 // @mui material components
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import { CacheProvider } from '@emotion/react';
 import CssBaseline from "@mui/material/CssBaseline";
 import createEmotionCache from "./createEmotionCache";
@@ -23,10 +23,27 @@ import {
   filter
 } from './redux/slices/getCountries';
 
+// themes
+import theme from './assets/theme';
+
+export const ColorModeContext = createContext({ toggleColorMode: () => {} });
+
 const App = () => {
 
   const cache = createEmotionCache();
-  const theme = createTheme();
+
+  // setting up theme
+
+  const [mode, setMode] = useState('light');
+
+  const colorMode = useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+      },
+    }),
+    [],
+  );
 
   const dispatch = useDispatch();
   let countries = useSelector((state) => state.countryReducer.countries, shallowEqual);
@@ -52,11 +69,11 @@ const App = () => {
   const filteredRegion = useSelector((state) => state.countryReducer.regionFilter, shallowEqual);
 
 
-  if ( filteredSearch.length !== 0  && filteredRegion.length === 0 ) {
+  if ( filteredSearch && filteredSearch.length !== 0  && filteredRegion.length === 0 ) {
     countries = filteredSearch;
-  } else if ( filteredSearch.length === 0  && filteredRegion.length !== 0 ) {
+  } else if ( filteredSearch && filteredSearch.length === 0  && filteredRegion.length !== 0 ) {
     countries = filteredRegion;
-  } else if ( filteredSearch.length !== 0 && filteredRegion.length !== 0) {
+  } else if ( filteredSearch && filteredSearch.length !== 0 && filteredRegion.length !== 0) {
     countries = filteredSearch;
   }
 
@@ -73,7 +90,7 @@ const App = () => {
         countries={countries}
         textListener={textListener} 
         />} key="okay"/>
-        <Route exact path="/details/:common" element={<Details countries={countries} />} />;
+        <Route path="/details/:common" element={<Details countries={countries} />} />;
         </Routes>
     }
     else
@@ -82,12 +99,14 @@ const App = () => {
 
 
   return (
+    <ColorModeContext.Provider value={colorMode}>
     <CacheProvider value={cache}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={mode === 'light' ? theme : theme}>
         <CssBaseline />
           {getRoutes()}
       </ThemeProvider>
     </CacheProvider>
+    </ColorModeContext.Provider>
   );
 }
 

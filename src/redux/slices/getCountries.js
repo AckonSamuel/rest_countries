@@ -25,7 +25,7 @@ const countriesFetchSlice = createSlice({
     searchTitle: (state, action) => {
       const innerFilter = state.regionFilter.length > 0 ? state.regionFilter : state.countries;
       const filteredCountries = innerFilter
-      .filter((country) => country.name.official
+      .filter((country) => country.name.common
       .toLowerCase().includes(action.payload.toLowerCase()));
       return {
         ...state,

@@ -2,32 +2,29 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import Brightness3Icon from '@mui/icons-material/Brightness3';
+import { styled } from '@mui/material/styles';
+import ModeButton from './ModeButton';
+import pxToRem from '../../assets/theme/pxToRem';
+
+const Item = styled(AppBar)(({ theme }) => ({
+  backgroundColor: theme.palette.background.primary,
+  color: theme.palette.text.main,
+  boxShadow: theme.palette.shadow.secondary,
+  paddingLeft: pxToRem(40), 
+  paddingRight: pxToRem(40) 
+}));
 
 const Navbar = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box sx={{ flexGrow: 1, }}>
+      <Item position="static">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="logo" component="div" sx={{ flexGrow: 1 }}>
             Where in the world?
           </Typography>
-          <Box>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ transform: 'rotate(140deg)', marginRight: -2 }}
-          >
-            <Brightness3Icon />
-          </IconButton>
-          <Button color="inherit">Dark Mode</Button>
-          </Box>
+          <ModeButton />
         </Toolbar>
-      </AppBar>
+      </Item>
     </Box>
   );
 }

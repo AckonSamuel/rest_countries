@@ -80,7 +80,7 @@ const Data = ({ country }) => {
             {putTrans(countryData2)}
             </Typography>
             {borderArr.length > 0 &&
-                <Box sx={{ flex: '0 0 100%', marginTop: pxToRem(70)}}>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, flex: '0 0 100%', marginTop: pxToRem(70)}}>
                     <Typography variant="detailsContent"><strong>Border Countries:</strong></Typography>
                     <BorderCountries borderArr={borderArr} />
                 </Box>

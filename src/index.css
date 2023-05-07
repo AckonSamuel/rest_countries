@@ -38,6 +38,11 @@ code {
 .error-msg {
   flex: 0 0 100%;
 }
+
+.moon {
+  font-size: 1.125rem;
+}
+
 /* #country-list > * {
   order: 0;
 } */

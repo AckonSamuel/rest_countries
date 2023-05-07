@@ -70,6 +70,24 @@ const typography = {
     color: baseProperties.color,
   },
 
+  returnHome: {
+    fontSize: pxToRem(16),
+    lineHeight: pxToRem(20),
+    fontWeight: baseProperties.fontWeightLight,
+    fontFamily: baseProperties.fontFamily,
+    fontStyle: baseProperties.fontStyle,
+    color: baseProperties.color,
+  },
+
+  darkMode: {
+    fontSize: pxToRem(16),
+    lineHeight: pxToRem(22),
+    fontWeight: baseProperties.fontWeightMedium,
+    fontFamily: baseProperties.fontFamily,
+    fontStyle: baseProperties.fontStyle,
+    color: baseProperties.color,
+  },
+
   h1: {
     fontSize: pxToRem(48),
     lineHeight: 1.25,

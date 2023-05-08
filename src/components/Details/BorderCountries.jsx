@@ -16,7 +16,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const BorderCountries = ({ borderArr }) => (
   <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-betweem' }}>
-    { borderArr.map((country) => <Item key={country.name.common}>{country}</Item>)}
+    { borderArr.map((country) => <Item key={country}>{country}</Item>)}
   </Box>
 );
 

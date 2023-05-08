@@ -69,7 +69,7 @@ const CountryCard = ({
 };
 
 CountryCard.defaultProps = {
-  capital: 'N/A',
+  capital: ['N/A'],
 };
 
 CountryCard.propTypes = {
@@ -78,7 +78,7 @@ CountryCard.propTypes = {
   flagsvg: PropTypes.string.isRequired,
   region: PropTypes.string.isRequired,
   population: PropTypes.number.isRequired,
-  capital: PropTypes.string,
+  capital: PropTypes.arrayOf(PropTypes.string.isRequired),
 };
 
 export default CountryCard;

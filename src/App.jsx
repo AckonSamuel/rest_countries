@@ -25,6 +25,7 @@ import {
 
 // themes
 import theme from './assets/theme';
+import darkTheme from './assets/dark-theme';
 
 export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
@@ -101,7 +102,7 @@ const App = () => {
   return (
     <ColorModeContext.Provider value={colorMode}>
     <CacheProvider value={cache}>
-      <ThemeProvider theme={mode === 'light' ? theme : theme}>
+      <ThemeProvider theme={mode === 'light' ? theme : darkTheme}>
         <CssBaseline />
           {getRoutes()}
       </ThemeProvider>

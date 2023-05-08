@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -11,17 +11,23 @@ const SelectFilter = ({ filterListener, filterContinent }) => {
   const theme = useTheme();
 
   return (
-    <Box sx={{ width: 120, marginBottom: pxToRem(48),
+    <Paper sx={{ width: 200, marginBottom: pxToRem(48),
     [theme.breakpoints.up('lg')]: {
-      marginLeft: 'auto', marginRight: pxToRem(78),  marginTop: pxToRem(48),
+      marginLeft: 'auto', marginTop: pxToRem(48),
     }}}>
-      <FormControl sx={{ width: pxToRem(200)}}>
-        <InputLabel id="demo-simple-select-label">Filter by Region</InputLabel>
+      <FormControl sx={{ width: pxToRem(200),
+      color: theme.palette.text,
+      }}>
+        <InputLabel id="demo-simple-select-label"
+        sx={{ color: theme.palette.text.main,
+        }}
+        >Filter by Region</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           label="Filter by Region"
           value={filterContinent}
+          variant="outlined"
           onChange={ (e) => filterListener(e.target.value) }
         >
           <MenuItem value={"All"}>All</MenuItem>
@@ -32,7 +38,7 @@ const SelectFilter = ({ filterListener, filterContinent }) => {
           <MenuItem value={"Oceania"}>Oceania</MenuItem>
         </Select>
       </FormControl>
-    </Box>
+    </Paper>
   );
 };
 

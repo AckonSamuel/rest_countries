@@ -1,5 +1,5 @@
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
@@ -16,7 +16,7 @@ const Item = styled(AppBar)(({ theme }) => ({
 
 const Navbar = () => {
   return (
-    <Box sx={{ flexGrow: 1, }}>
+    <Paper sx={{ flexGrow: 1, width: '100%' }}>
       <Item position="static">
         <Toolbar>
           <Typography variant="logo" component="div" sx={{ flexGrow: 1 }}>
@@ -25,7 +25,7 @@ const Navbar = () => {
           <ModeButton />
         </Toolbar>
       </Item>
-    </Box>
+    </Paper>
   );
 }
 

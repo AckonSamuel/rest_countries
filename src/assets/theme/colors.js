@@ -1,11 +1,17 @@
 const colors = {
+    mode: 'light',
+
     background: {
         default: "#FAFAFA",
         primary: "#fff",
         secondary: "#848484",
         tertiary: "#000000",
         main: "#979797",
-        focus: "808080",
+        focus: "#808080",
+    },
+
+    filter: {
+        main: "#fff",
     },
 
     text: {

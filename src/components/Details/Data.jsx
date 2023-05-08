@@ -97,9 +97,26 @@ const Data = ({ country }) => {
   );
 };
 
+Data.defaultProps = {
+  country: {
+    name: {},
+    borders: ['n/a'],
+    subregion: 'n/a',
+    currencies: {},
+    languages: {},
+    tld: ['n/a'],
+    cca3: 'n/a',
+    flagsalt: 'n/a',
+    flagsvg: 'n/a',
+    region: 'n/a',
+    population: 0,
+    capital: ['n/a'],
+  },
+};
+
 Data.propTypes = {
   country: PropTypes.shape({
-    name: PropTypes.arrayOf(PropTypes.string),
+    name: PropTypes.objectOf(PropTypes.any),
     borders: PropTypes.arrayOf(PropTypes.string),
     subregion: PropTypes.string,
     currencies: PropTypes.objectOf(PropTypes.string),

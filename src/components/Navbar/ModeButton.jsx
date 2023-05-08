@@ -8,16 +8,17 @@ import { IoMoonOutline } from 'react-icons/io5';
 import { ColorModeContext } from '../../App';
 import pxToRem from '../../assets/theme/pxToRem';
 
-const ModeButton = () =>  {
-    const colorMode = useContext(ColorModeContext);
-    const theme = useTheme();
-    return (
+const ModeButton = () => {
+  const colorMode = useContext(ColorModeContext);
+  const theme = useTheme();
+  return (
     <Box onClick={colorMode.toggleColorMode}>
-<Button variant="returnHome" component="button" sx={{ width: pxToRem(155), height: pxToRem(40), justifyContent: 'space-between'}}>
-            <IoMoonOutline className='moon'/>
-            <Typography variant="darkMode">Dark Mode</Typography>
-        </Button>
-    </Box> );
+      <Button variant="returnHome" component="button" sx={{ width: pxToRem(155), height: pxToRem(40), justifyContent: 'space-between' }}>
+        <IoMoonOutline className="moon" />
+        <Typography variant="darkMode">Dark Mode</Typography>
+      </Button>
+    </Box>
+  );
 };
 
 export default ModeButton;

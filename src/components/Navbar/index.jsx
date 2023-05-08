@@ -10,23 +10,21 @@ const Item = styled(AppBar)(({ theme }) => ({
   backgroundColor: theme.palette.background.primary,
   color: theme.palette.text.main,
   boxShadow: theme.palette.shadow.secondary,
-  paddingLeft: pxToRem(40), 
-  paddingRight: pxToRem(40) 
+  paddingLeft: pxToRem(40),
+  paddingRight: pxToRem(40),
 }));
 
-const Navbar = () => {
-  return (
-    <Paper sx={{ flexGrow: 1, width: '100%' }}>
-      <Item position="static">
-        <Toolbar>
-          <Typography variant="logo" component="div" sx={{ flexGrow: 1 }}>
-            Where in the world?
-          </Typography>
-          <ModeButton />
-        </Toolbar>
-      </Item>
-    </Paper>
-  );
-}
+const Navbar = () => (
+  <Paper sx={{ flexGrow: 1, width: '100%' }}>
+    <Item position="static">
+      <Toolbar>
+        <Typography variant="logo" component="div" sx={{ flexGrow: 1 }}>
+          Where in the world?
+        </Typography>
+        <ModeButton />
+      </Toolbar>
+    </Item>
+  </Paper>
+);
 
 export default Navbar;

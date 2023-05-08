@@ -25,7 +25,13 @@ const CountryCard = ({
   const theme = useTheme();
 
   return (
-    <Card sx={{ width: pxToRem(264), height: pxToRem(336), backgroundColor: theme.palette.background.primary }}>
+    <Card
+      sx={{
+        width: pxToRem(264),
+        height: pxToRem(336),
+        backgroundColor: theme.palette.background.primary,
+      }}
+    >
       <CardActionArea>
         <CardMedia
           component="img"
@@ -62,13 +68,17 @@ const CountryCard = ({
   );
 };
 
+CountryCard.defaultProps = {
+  capital: 'N/A',
+};
+
 CountryCard.propTypes = {
   officialName: PropTypes.string.isRequired,
   flagsalt: PropTypes.string.isRequired,
   flagsvg: PropTypes.string.isRequired,
   region: PropTypes.string.isRequired,
   population: PropTypes.number.isRequired,
-  // capital: PropTypes.string.isRequired,
+  capital: PropTypes.string,
 };
 
 export default CountryCard;

@@ -31,7 +31,12 @@ const Details = ({ countries }) => {
                 <Image src={country.flags.svg} minwidth={pxToRem(560)} height={pxToRem(401)} fit="fill" />
               </Grid>
               <Grid item xs={12} lg={5}>
-                <Data country={country} countries={countries} maxWidth={pxToRem(600)} maxHeight={pxToRem(320)} />
+                <Data
+                  country={country}
+                  countries={countries}
+                  maxWidth={pxToRem(600)}
+                  maxHeight={pxToRem(320)}
+                />
               </Grid>
             </Grid>
           ))}

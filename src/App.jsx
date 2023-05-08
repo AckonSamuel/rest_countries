@@ -54,9 +54,9 @@ const App = () => {
     dispatch(countriesFetch());
   }, [dispatch]);
 
-  const textListener = (country_name) => {
-    dispatch(searchTitle(country_name));
-    dispatch(search(country_name));
+  const textListener = (countryName) => {
+    dispatch(searchTitle(countryName));
+    dispatch(search(countryName));
   };
 
   const filterListener = (region) => {

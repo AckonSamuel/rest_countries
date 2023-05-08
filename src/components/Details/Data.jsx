@@ -98,7 +98,22 @@ const Data = ({ country }) => {
 };
 
 Data.propTypes = {
-  country: PropTypes.objectOf(PropTypes.any).isRequired,
+  country: PropTypes.shape({
+    name: PropTypes.arrayOf(PropTypes.string),
+    borders: PropTypes.arrayOf(PropTypes.string),
+    subregion: PropTypes.string,
+    currencies: PropTypes.objectOf(PropTypes.string),
+    languages: PropTypes.objectOf(PropTypes.string),
+    tld: PropTypes.arrayOf(PropTypes.string),
+    cca3: PropTypes.string,
+    flagsalt: PropTypes.string,
+    flagsvg: PropTypes.string.isRequired,
+    region: PropTypes.string.isRequired,
+    population: PropTypes.number.isRequired,
+    capital: PropTypes.arrayOf(PropTypes.string.isRequired),
+  }).isRequired,
 };
+
+// Write an appropriate proptypes code for Data component
 
 export default Data;

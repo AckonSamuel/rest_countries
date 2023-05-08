@@ -70,11 +70,12 @@ const CountryCard = ({
 
 CountryCard.defaultProps = {
   capital: ['N/A'],
+  flagsalt: 'n/a',
 };
 
 CountryCard.propTypes = {
   officialName: PropTypes.string.isRequired,
-  flagsalt: PropTypes.string.isRequired,
+  flagsalt: PropTypes.string,
   flagsvg: PropTypes.string.isRequired,
   region: PropTypes.string.isRequired,
   population: PropTypes.number.isRequired,

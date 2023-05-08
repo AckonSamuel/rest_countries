@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import { useTheme } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -21,8 +22,10 @@ const CountryCard = ({
         navigate(sm);
     };
 
+    const theme = useTheme();
+
     return (
-        <Card sx={{ width: pxToRem(264), height: pxToRem(336)}}>
+        <Card sx={{ width: pxToRem(264), height: pxToRem(336), backgroundColor: theme.palette.background.primary}}>
             <CardActionArea>
                 <CardMedia
                     component="img"
@@ -38,10 +41,10 @@ const CountryCard = ({
                     <Typography gutterBottom variant="cardTitle" component="div">
                         {officialName}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        <strong>Population:</strong> {population.toLocaleString()} <br />
-                        <strong>Region: </strong> {region} <br />
-                        <strong>Capital:</strong> {capital}
+                    <Typography variant="cardContent">
+                        <span style={{fontWeight: 600}}>Population:</span> {population.toLocaleString()} <br />
+                        <span style={{fontWeight: 600}}>Region: </span> {region} <br />
+                        <span style={{fontWeight: 600}}>Capital:</span> {capital}
                     </Typography>
                 </CardContent>
             </CardActionArea>

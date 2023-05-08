@@ -11,31 +11,39 @@ const SelectFilter = ({ filterListener, filterContinent }) => {
   const theme = useTheme();
 
   return (
-    <Paper sx={{ width: 200, marginBottom: pxToRem(48),
-    [theme.breakpoints.up('lg')]: {
-      marginLeft: 'auto', marginTop: pxToRem(48),
-    }}}>
-      <FormControl sx={{ width: pxToRem(200),
-      color: theme.palette.text,
-      }}>
-        <InputLabel id="demo-simple-select-label"
-        sx={{ color: theme.palette.text.main,
-        }}
-        >Filter by Region</InputLabel>
+    <Paper sx={{
+      width: 200,
+      marginBottom: pxToRem(48),
+      [theme.breakpoints.up('lg')]: {
+        marginLeft: 'auto', marginTop: pxToRem(48),
+      },
+    }}
+    >
+      <FormControl sx={{
+        width: pxToRem(200),
+        color: theme.palette.text,
+      }}
+      >
+        <InputLabel
+          id="demo-simple-select-label"
+          sx={{ color: theme.palette.text.main }}
+        >
+          Filter by Region
+        </InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           label="Filter by Region"
           value={filterContinent}
           variant="outlined"
-          onChange={ (e) => filterListener(e.target.value) }
+          onChange={(e) => filterListener(e.target.value)}
         >
-          <MenuItem value={"All"}>All</MenuItem>
-          <MenuItem value={"Africa"}>Africa</MenuItem>
-          <MenuItem value={"America"}>America</MenuItem>
-          <MenuItem value={"Asia"}>Asia</MenuItem>
-          <MenuItem value={"Europe"}>Europe</MenuItem>
-          <MenuItem value={"Oceania"}>Oceania</MenuItem>
+          <MenuItem value="All">All</MenuItem>
+          <MenuItem value="Africa">Africa</MenuItem>
+          <MenuItem value="America">America</MenuItem>
+          <MenuItem value="Asia">Asia</MenuItem>
+          <MenuItem value="Europe">Europe</MenuItem>
+          <MenuItem value="Oceania">Oceania</MenuItem>
         </Select>
       </FormControl>
     </Paper>

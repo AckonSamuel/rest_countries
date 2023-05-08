@@ -4,20 +4,20 @@ import pxToRem from './pxToRem';
 const { text } = colors;
 
 const baseProperties = {
-    fontFamily: '"Nunito Sans", sans-serif',
-    fontWeightLighter: 300,
-    fontWeightLight: 400,
-    fontWeightMedium: 600,
-    fontWeightBold: 800,
-    fontStyle: 'normal',
-    color: text.main,
+  fontFamily: '"Nunito Sans", sans-serif',
+  fontWeightLighter: 300,
+  fontWeightLight: 400,
+  fontWeightMedium: 600,
+  fontWeightBold: 800,
+  fontStyle: 'normal',
+  color: text.main,
 };
 
 const baseHeadingProperties = {
-    fontFamily: baseProperties.fontFamily,
-    fontWeight: baseProperties.fontWeightBold,
-    lineHeight: pxToRem(33),
-    color: baseProperties.color,
+  fontFamily: baseProperties.fontFamily,
+  fontWeight: baseProperties.fontWeightBold,
+  lineHeight: pxToRem(33),
+  color: baseProperties.color,
 };
 
 const typography = {
@@ -26,12 +26,12 @@ const typography = {
   fontWeightMedium: baseProperties.fontWeightMedium,
   fontWeightBold: baseProperties.fontWeightBold,
 
-  logo : {
+  logo: {
     fontSize: pxToRem(24),
     ...baseHeadingProperties,
   },
 
-  cardTitle : {
+  cardTitle: {
     fontSize: pxToRem(18),
     lineHeight: pxToRem(26),
     ...baseHeadingProperties,
@@ -146,5 +146,3 @@ const typography = {
 };
 
 export default typography;
-
-

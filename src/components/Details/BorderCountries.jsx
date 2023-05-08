@@ -9,19 +9,18 @@ const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.borderCountries,
   padding: theme.spacing(1),
   textAlign: 'center',
-  marginRight: '1rem', 
+  marginRight: '1rem',
   marginBottom: '1rem',
   color: theme.palette.text.secondary,
 }));
 
 const BorderCountries = ({ borderArr }) => (
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: "space-betweem",}}>
-        { borderArr.map((country) => <Item>{country}</Item> )}
-      </Box>
-  );
-
+  <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-betweem' }}>
+    { borderArr.map((country) => <Item key={country}>{country}</Item>)}
+  </Box>
+);
 
 BorderCountries.propTypes = {
   borderArr: PropTypes.arrayOf(PropTypes.string).isRequired,
-}
+};
 export default BorderCountries;

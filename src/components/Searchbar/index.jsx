@@ -11,39 +11,44 @@ const Searchbar = ({ textListener, searchText }) => {
   return (
     <Paper
       component="form"
-      sx={{ p: '2px 4px', display: 'flex', 
-      alignItems: 'center', 
-      width: 430, 
-      marginTop: pxToRem(48), 
-      marginBottom: pxToRem(48), 
-      backgroundColor: theme.palette.background.primary,
-    }}
+      sx={{
+        p: '2px 4px',
+        display: 'flex',
+        alignItems: 'center',
+        width: 430,
+        marginTop: pxToRem(48),
+        marginBottom: pxToRem(48),
+        backgroundColor: theme.palette.background.primary,
+      }}
     >
-      <IconButton type="button" sx={{ 
-        p: '10px', 
-        color: theme.palette.background.secondary
-         }} aria-label="search">
+      <IconButton
+        type="button"
+        sx={{
+          p: '10px',
+          color: theme.palette.background.secondary,
+        }}
+        aria-label="search"
+      >
         <SearchIcon />
       </IconButton>
       <InputBase
-        sx={{ ml: 1, flex: 1,
-        }}
+        sx={{ ml: 1, flex: 1 }}
         placeholder="Search Country"
         type="search"
         value={searchText}
-        inputProps={{ 
-            style: { color: theme.palette.background.secondary },
-            'aria-label': 'search country',
-            onChange: (e) => textListener(e.target.value)
-     }}
+        inputProps={{
+          style: { color: theme.palette.background.secondary },
+          'aria-label': 'search country',
+          onChange: (e) => textListener(e.target.value),
+        }}
       />
     </Paper>
   );
 };
 
 Searchbar.propTypes = {
-    textListener: PropTypes.func.isRequired,
-    searchText: PropTypes.string.isRequired,
+  textListener: PropTypes.func.isRequired,
+  searchText: PropTypes.string.isRequired,
 };
 
 export default Searchbar;

@@ -49,7 +49,7 @@ const Data = ({ country }) => {
   };
 
   const countryData2 = {
-    'Top Level Domain': tld[0],
+    'Top Level Domain': tld ? tld[0] : 'n/a',
     Currencies: Object.values(currencies).map((curr) => curr.name).join(', '),
     Languages: Object.values(languages).join(', '),
   };
@@ -99,7 +99,9 @@ const Data = ({ country }) => {
 
 Data.defaultProps = {
   country: {
-    name: {},
+    name: {
+      common: 'n/a',
+    },
     borders: ['n/a'],
     subregion: 'n/a',
     currencies: {},
@@ -116,7 +118,10 @@ Data.defaultProps = {
 
 Data.propTypes = {
   country: PropTypes.shape({
-    name: PropTypes.objectOf(PropTypes.any),
+    name: PropTypes.objectOf(PropTypes.shape({
+      common: PropTypes.string,
+      nativeName: PropTypes.objectOf(PropTypes.string),
+    })),
     borders: PropTypes.arrayOf(PropTypes.string),
     subregion: PropTypes.string,
     currencies: PropTypes.objectOf(PropTypes.string),
@@ -124,11 +129,11 @@ Data.propTypes = {
     tld: PropTypes.arrayOf(PropTypes.string),
     cca3: PropTypes.string,
     flagsalt: PropTypes.string,
-    flagsvg: PropTypes.string.isRequired,
-    region: PropTypes.string.isRequired,
-    population: PropTypes.number.isRequired,
-    capital: PropTypes.arrayOf(PropTypes.string.isRequired),
-  }).isRequired,
+    flagsvg: PropTypes.string,
+    region: PropTypes.string,
+    population: PropTypes.number,
+    capital: PropTypes.arrayOf(PropTypes.string),
+  }),
 };
 
 // Write an appropriate proptypes code for Data component

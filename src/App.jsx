@@ -1,5 +1,5 @@
 import {
-  useState, createContext, useMemo, useEffect,
+  useState, useMemo, useEffect,
 } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 // react-router components
@@ -9,6 +9,7 @@ import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import { CacheProvider } from '@emotion/react';
 import CssBaseline from '@mui/material/CssBaseline';
+import ColorModeContext from './context';
 import createEmotionCache from './createEmotionCache';
 
 // react components
@@ -28,8 +29,6 @@ import {
 // themes
 import theme from './assets/theme';
 import darkTheme from './assets/dark-theme';
-
-export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
 const App = () => {
   const cache = createEmotionCache();

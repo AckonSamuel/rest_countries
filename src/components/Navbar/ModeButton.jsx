@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { IoMoonOutline } from 'react-icons/io5';
-import { ColorModeContext } from '../../App';
+import ColorModeContext from '../../context';
 import pxToRem from '../../assets/theme/pxToRem';
 
 const ModeButton = () => {

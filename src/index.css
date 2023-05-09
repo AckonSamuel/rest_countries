@@ -60,10 +60,10 @@ code {
 }
 
 @media (max-width: 600px) {
- .moon {
-  font-size: 0.8rem;
-  margin-right: 0.2rem;
- }   
+  .moon {
+    font-size: 0.8rem;
+    margin-right: 0.2rem;
+  }
 }
 
 /* #country-list > * {

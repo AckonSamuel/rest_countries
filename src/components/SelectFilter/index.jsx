@@ -10,12 +10,35 @@ import pxToRem from '../../assets/theme/pxToRem';
 const SelectFilter = ({ filterListener, filterContinent }) => {
   const theme = useTheme();
 
+  const continents = ['All', 'Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+
+  const populateContinents = (conti) => (
+    conti.map((continent) => (
+      <MenuItem
+        key={continent}
+        value={continent}
+        sx={{
+          color: theme.palette.text.main,
+          [theme.breakpoints.down('md')]: {
+            fontSize: '1rem',
+          },
+          [theme.breakpoints.down('sm')]: {
+            fontSize: '0.855rem',
+          },
+        }}
+      >
+        {continent}
+      </MenuItem>
+    ))
+  );
+
   return (
     <Paper sx={{
       width: 200,
       marginBottom: pxToRem(48),
       [theme.breakpoints.up('lg')]: {
-        marginLeft: 'auto', marginTop: pxToRem(48),
+        marginLeft: 'auto',
+        marginTop: pxToRem(48),
       },
     }}
     >
@@ -26,7 +49,15 @@ const SelectFilter = ({ filterListener, filterContinent }) => {
       >
         <InputLabel
           id="demo-simple-select-label"
-          sx={{ color: theme.palette.text.main }}
+          sx={{
+            color: theme.palette.text.main,
+            [theme.breakpoints.down('md')]: {
+              fontSize: '1rem',
+            },
+            [theme.breakpoints.down('sm')]: {
+              fontSize: '0.855rem',
+            },
+          }}
         >
           Filter by Region
         </InputLabel>
@@ -37,13 +68,16 @@ const SelectFilter = ({ filterListener, filterContinent }) => {
           value={filterContinent}
           variant="outlined"
           onChange={(e) => filterListener(e.target.value)}
+          sx={{
+            [theme.breakpoints.down('md')]: {
+              fontSize: '1rem',
+            },
+            [theme.breakpoints.down('sm')]: {
+              fontSize: '0.855rem',
+            },
+          }}
         >
-          <MenuItem value="All">All</MenuItem>
-          <MenuItem value="Africa">Africa</MenuItem>
-          <MenuItem value="America">America</MenuItem>
-          <MenuItem value="Asia">Asia</MenuItem>
-          <MenuItem value="Europe">Europe</MenuItem>
-          <MenuItem value="Oceania">Oceania</MenuItem>
+          {populateContinents(continents)}
         </Select>
       </FormControl>
     </Paper>

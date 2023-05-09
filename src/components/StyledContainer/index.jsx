@@ -12,13 +12,15 @@ const StyledContainer = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
   flexWrap: 'wrap',
   [theme.breakpoints.up('lg')]: {
+    paddingLeft: pxToRem(60),
+    paddingRight: pxToRem(60),
     flexDirection: 'row',
   },
   [theme.breakpoints.down('sm')]: {
     paddingLeft: pxToRem(20),
     paddingRight: pxToRem(20),
   },
-  [theme.breakpoints.up('md')]: {
+  [theme.breakpoints.between('md', 'lg')]: {
     paddingLeft: pxToRem(30),
     paddingRight: pxToRem(30),
   },

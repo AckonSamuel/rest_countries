@@ -16,6 +16,10 @@ const Item = styled(AppBar)(({ theme }) => ({
     paddingLeft: pxToRem(5),
     paddingRight: pxToRem(5),
   },
+  [theme.breakpoints.up('lg')]: {
+    paddingLeft: pxToRem(36),
+    paddingRight: pxToRem(36),
+  },
 }));
 
 const Navbar = () => {

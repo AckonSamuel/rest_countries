@@ -30,7 +30,7 @@ const CountryCard = ({
         width: pxToRem(264),
         height: pxToRem(336),
         backgroundColor: theme.palette.background.primary,
-        [theme.breakpoints.down('lg')]: {
+        [theme.breakpoints.down('md')]: {
           margin: 'auto',
         },
       }}

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Typography from '@mui/material/Typography';
@@ -16,7 +16,7 @@ const Return = () => {
   };
 
   return (
-    <Box width="100%" sx={{ marginBottom: pxToRem(60), marginTop: pxToRem(50) }}>
+    <Paper width="100%" sx={{ marginBottom: pxToRem(60), marginTop: pxToRem(50) }}>
       <Button
         variant="returnHome"
         component="button"
@@ -31,7 +31,7 @@ const Return = () => {
         <ArrowBackIcon />
         <Typography variant="returnHome">Back</Typography>
       </Button>
-    </Box>
+    </Paper>
   );
 };
 

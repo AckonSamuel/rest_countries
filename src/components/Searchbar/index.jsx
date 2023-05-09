@@ -38,12 +38,23 @@ const Searchbar = ({ textListener, searchText }) => {
         <SearchIcon />
       </IconButton>
       <InputBase
-        sx={{ ml: 1, flex: 1 }}
+        sx={{
+          ml: 1,
+          flex: 1,
+          [theme.breakpoints.down('md')]: {
+            fontSize: '1rem',
+          },
+          [theme.breakpoints.down('sm')]: {
+            fontSize: '0.855rem',
+          },
+        }}
         placeholder="Search Country"
         type="search"
         value={searchText}
         inputProps={{
-          style: { color: theme.palette.background.secondary },
+          style: {
+            color: theme.palette.background.secondary,
+          },
           'aria-label': 'search country',
           onChange: (e) => textListener(e.target.value),
         }}

@@ -48,7 +48,7 @@ const Searchbar = ({ textListener, searchText }) => {
             fontSize: '0.855rem',
           },
         }}
-        placeholder="Search Country"
+        placeholder="Search Country..."
         type="search"
         value={searchText}
         inputProps={{

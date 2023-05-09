@@ -33,13 +33,6 @@ const Data = ({ country }) => {
   const woek = () => filterCountries.length > 0 && extractCountry(filterCountries);
   woek();
 
-  // const native = () => {
-  //   const newAlt = altSpellings.filter((spell) => spell !== cca2 && spell !== name.offical);
-  //   const newObj = Object.values(name.nativeName).map((nameObj) => nameObj.official);
-  //   return newAlt.length > 0 && newAlt.filter((obn) => !newObj.includes(obn));
-
-  // };
-
   const countryData1 = {
     'Native name': Object.values(name.nativeName)[0].common,
     Population: population.toLocaleString(),

@@ -5,8 +5,8 @@ import pxToRem from '../../assets/theme/pxToRem';
 const StyledContainer = styled(Box)(({ theme }) => ({
   background: 0,
   backgroundColor: theme.palette.background.default,
-  paddingLeft: pxToRem(10),
-  paddingRight: pxToRem(10),
+  paddingLeft: pxToRem(16),
+  paddingRight: pxToRem(16),
   margin: 0,
   display: 'flex',
   flexDirection: 'column',
@@ -15,6 +15,10 @@ const StyledContainer = styled(Box)(({ theme }) => ({
     flexDirection: 'row',
     paddingLeft: pxToRem(60),
     paddingRight: pxToRem(60),
+  },
+  [theme.breakpoints.up('md')]: {
+    paddingLeft: pxToRem(45),
+    paddingRight: pxToRem(45),
   },
 }));
 

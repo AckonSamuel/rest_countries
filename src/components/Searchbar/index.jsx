@@ -15,12 +15,15 @@ const Searchbar = ({ textListener, searchText }) => {
         p: '2px 4px',
         display: 'flex',
         alignItems: 'center',
-        width: pxToRem(343),
+        maxWidth: 'inherit',
         marginTop: pxToRem(48),
         marginBottom: pxToRem(48),
         backgroundColor: theme.palette.background.primary,
         [theme.breakpoints.up('lg')]: {
           width: 430,
+        },
+        [theme.breakpoints.up('sm')]: {
+          width: 343,
         },
       }}
     >

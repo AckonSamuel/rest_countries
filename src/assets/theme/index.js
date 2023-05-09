@@ -21,10 +21,10 @@ export default createTheme({
       styleOverrides: {
         root: {
           background: 'none',
-          boxShadow: colors.shadow.secondary,
         },
       },
     },
+
     MuiOutlinedInput: {
       styleOverrides: {
         root: {

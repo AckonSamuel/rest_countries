@@ -15,10 +15,16 @@ const Searchbar = ({ textListener, searchText }) => {
         p: '2px 4px',
         display: 'flex',
         alignItems: 'center',
-        width: 430,
+        maxWidth: 'inherit',
         marginTop: pxToRem(48),
         marginBottom: pxToRem(48),
         backgroundColor: theme.palette.background.primary,
+        [theme.breakpoints.up('lg')]: {
+          width: 430,
+        },
+        [theme.breakpoints.up('sm')]: {
+          width: 343,
+        },
       }}
     >
       <IconButton
@@ -32,12 +38,23 @@ const Searchbar = ({ textListener, searchText }) => {
         <SearchIcon />
       </IconButton>
       <InputBase
-        sx={{ ml: 1, flex: 1 }}
-        placeholder="Search Country"
+        sx={{
+          ml: 1,
+          flex: 1,
+          [theme.breakpoints.down('md')]: {
+            fontSize: '1rem',
+          },
+          [theme.breakpoints.down('sm')]: {
+            fontSize: '0.855rem',
+          },
+        }}
+        placeholder="Search Country..."
         type="search"
         value={searchText}
         inputProps={{
-          style: { color: theme.palette.background.secondary },
+          style: {
+            color: theme.palette.background.secondary,
+          },
           'aria-label': 'search country',
           onChange: (e) => textListener(e.target.value),
         }}

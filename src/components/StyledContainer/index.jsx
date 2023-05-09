@@ -5,20 +5,22 @@ import pxToRem from '../../assets/theme/pxToRem';
 const StyledContainer = styled(Box)(({ theme }) => ({
   background: 0,
   backgroundColor: theme.palette.background.default,
-  paddingLeft: pxToRem(16),
-  paddingRight: pxToRem(16),
+  paddingLeft: pxToRem(44),
+  paddingRight: pxToRem(44),
   margin: 0,
   display: 'flex',
   flexDirection: 'column',
   flexWrap: 'wrap',
   [theme.breakpoints.up('lg')]: {
     flexDirection: 'row',
-    paddingLeft: pxToRem(60),
-    paddingRight: pxToRem(60),
+  },
+  [theme.breakpoints.down('sm')]: {
+    paddingLeft: pxToRem(20),
+    paddingRight: pxToRem(20),
   },
   [theme.breakpoints.up('md')]: {
-    paddingLeft: pxToRem(45),
-    paddingRight: pxToRem(45),
+    paddingLeft: pxToRem(30),
+    paddingRight: pxToRem(30),
   },
 }));
 

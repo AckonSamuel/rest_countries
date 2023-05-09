@@ -55,6 +55,14 @@ code {
 
 .moon {
   font-size: 1.125rem;
+  margin-right: 1rem;
+}
+
+@media (max-width: 600px) {
+ .moon {
+  font-size: 0.8rem;
+  margin-right: 0.2rem;
+ }   
 }
 
 /* #country-list > * {

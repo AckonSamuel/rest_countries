@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { useTheme } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Image from 'mui-image';
 import Data from './Data';
@@ -10,6 +11,8 @@ import pxToRem from '../../assets/theme/pxToRem';
 
 const Details = ({ countries }) => {
   const { common } = useParams();
+
+  const theme = useTheme();
 
   return (
     <>
@@ -27,8 +30,23 @@ const Details = ({ countries }) => {
                 flex: '0, 0, 100%', margin: '0 0 10rem 0', padding: 0, boxSizing: 'border-box',
               }}
             >
-              <Grid item xs={12} lg={5}>
-                <Image src={country.flags.svg} minwidth={pxToRem(560)} height={pxToRem(401)} fit="fill" />
+              <Grid
+                item
+                xs={12}
+                lg={5}
+                sx={{
+                  [theme.breakpoints.down('lg')]: {
+                    marginBottom: pxToRem(44),
+                    marginTop: pxToRem(64),
+                  },
+                }}
+              >
+                <Image
+                  src={country.flags.svg}
+                  minwidth={pxToRem(560)}
+                  fit="fill"
+                  sx={{ aspectRaio: '16/22' }}
+                />
               </Grid>
               <Grid item xs={12} lg={5}>
                 <Data

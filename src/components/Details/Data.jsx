@@ -1,5 +1,7 @@
 import { useSelector, shallowEqual } from 'react-redux';
 import PropTypes from 'prop-types';
+import { useTheme } from '@mui/material/styles';
+import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import BorderCountries from './BorderCountries';
@@ -65,21 +67,65 @@ const Data = ({ country }) => {
     return properties;
   };
 
+  const theme = useTheme();
+
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-      <Typography variant="detailsTitle" component="h2" sx={{ flex: '0 0 100%', marginBottom: pxToRem(23) }}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+      }}
+    >
+      <Typography
+        variant="detailsTitle"
+        component="h2"
+        sx={{
+          flex: '0 0 100%',
+          marginBottom: pxToRem(23),
+        }}
+      >
         {name.common}
       </Typography>
-      <Typography variant="detailsContent" className="first-data">
-        {putTrans(countryData1)}
-      </Typography>
-      <Typography variant="detailsContent" className="first-data">
-        {putTrans(countryData2)}
-      </Typography>
+      <Grid container spacing={4}>
+        <Grid item xs={12} sm={12} md={6} lg={6}>
+          <Typography
+            variant="detailsContent"
+            sx={{
+              [theme.breakpoints.down('md')]: {
+                fontSize: pxToRem(14),
+              },
+            }}
+            className="first-data"
+          >
+            {putTrans(countryData1)}
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={12} md={6} lg={6}>
+          <Typography
+            variant="detailsContent"
+            sx={{
+              [theme.breakpoints.down('md')]: {
+                fontSize: pxToRem(14),
+              },
+            }}
+            className="first-data"
+          >
+            {putTrans(countryData2)}
+          </Typography>
+        </Grid>
+      </Grid>
       {borderArr.length > 0
                 && (
                 <Box sx={{
-                  display: 'flex', flexWrap: 'wrap', gap: 2, flex: '0 0 100%', marginTop: pxToRem(70),
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: 2,
+                  flex: '0 0 100%',
+                  marginTop: pxToRem(70),
+                  [theme.breakpoints.down('md')]: {
+                    marginTop: pxToRem(40),
+                  },
                 }}
                 >
                   <Typography variant="detailsContent"><strong>Border Countries:</strong></Typography>

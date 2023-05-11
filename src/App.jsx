@@ -3,7 +3,7 @@ import {
 } from 'react';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 // react-router components
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // @mui material components
 import { ThemeProvider } from '@mui/material/styles';
@@ -104,6 +104,7 @@ const App = () => {
   };
 
   return (
+    <Router>
     <ColorModeContext.Provider value={colorMode}>
       <CacheProvider value={cache}>
         <ThemeProvider theme={mode === 'light' ? theme : darkTheme}>
@@ -112,6 +113,7 @@ const App = () => {
         </ThemeProvider>
       </CacheProvider>
     </ColorModeContext.Provider>
+    </Router>
   );
 };
 

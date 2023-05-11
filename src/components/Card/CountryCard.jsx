@@ -34,6 +34,7 @@ const CountryCard = ({
           margin: 'auto',
         },
       }}
+      onClick={() => goTo(`/details/${officialName}`)}
     >
       <CardActionArea>
         <CardMedia
@@ -42,7 +43,6 @@ const CountryCard = ({
           width="100%"
           image={flagsvg}
           alt={flagsalt}
-          onClick={() => goTo(`/details/${officialName}`)}
         />
         <CardContent
           sx={{ height: pxToRem(176) }}

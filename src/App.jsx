@@ -105,14 +105,14 @@ const App = () => {
 
   return (
     <Router>
-    <ColorModeContext.Provider value={colorMode}>
-      <CacheProvider value={cache}>
-        <ThemeProvider theme={mode === 'light' ? theme : darkTheme}>
-          <CssBaseline />
-          {getRoutes()}
-        </ThemeProvider>
-      </CacheProvider>
-    </ColorModeContext.Provider>
+      <ColorModeContext.Provider value={colorMode}>
+        <CacheProvider value={cache}>
+          <ThemeProvider theme={mode === 'light' ? theme : darkTheme}>
+            <CssBaseline />
+            {getRoutes()}
+          </ThemeProvider>
+        </CacheProvider>
+      </ColorModeContext.Provider>
     </Router>
   );
 };

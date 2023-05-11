@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 it('renders correctly', () => {
   const tree = renderer
     .create(
-        <Navbar />,
+      <Navbar />,
     )
     .toJSON();
   expect(tree).toMatchSnapshot();

@@ -9,7 +9,7 @@ import pxToRem from '../../assets/theme/pxToRem';
 const Item = styled(AppBar)(({ theme }) => ({
   backgroundColor: theme.palette.background.primary,
   color: theme.palette.text.main,
-  boxShadow: theme.palette.shadow.secondary,
+  boxShadow: theme.palette.shadow,
   paddingLeft: pxToRem(20),
   paddingRight: pxToRem(20),
   [theme.breakpoints.down('sm')]: {

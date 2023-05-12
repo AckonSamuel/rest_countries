@@ -3,9 +3,10 @@ import renderer from 'react-test-renderer';
 import Filter from '../components/SelectFilter';
 
 it('renders correctly', () => {
+  const filterContinent = 'Africa';
   const tree = renderer
     .create(
-      <Filter />,
+      <Filter filterContinent={filterContinent} />,
     )
     .toJSON();
   expect(tree).toMatchSnapshot();

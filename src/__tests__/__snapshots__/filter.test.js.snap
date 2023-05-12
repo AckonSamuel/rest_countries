@@ -8,8 +8,8 @@ exports[`renders correctly 1`] = `
     className="MuiFormControl-root css-lvg1jp-MuiFormControl-root"
   >
     <label
-      className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined css-kvi2wh-MuiFormLabel-root-MuiInputLabel-root"
-      data-shrink={false}
+      className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined css-1xefips-MuiFormLabel-root-MuiInputLabel-root"
+      data-shrink={true}
       id="demo-simple-select-label"
     >
       Filter by Region
@@ -31,11 +31,7 @@ exports[`renders correctly 1`] = `
         role="button"
         tabIndex={0}
       >
-        <span
-          className="notranslate"
-        >
-          ​
-        </span>
+        Africa
       </div>
       <input
         aria-hidden={true}
@@ -45,6 +41,7 @@ exports[`renders correctly 1`] = `
         onChange={[Function]}
         required={false}
         tabIndex={-1}
+        value="Africa"
       />
       <svg
         aria-hidden={true}
@@ -62,7 +59,7 @@ exports[`renders correctly 1`] = `
         className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
       >
         <legend
-          className="css-yjsfm1"
+          className="css-14lo706"
         >
           <span>
             Filter by Region

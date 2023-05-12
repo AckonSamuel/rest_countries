@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  <section
+    id="country-list"
+  >
+    <div
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1brhw7e-MuiPaper-root-MuiCard-root"
+    >
+      <button
+        className="MuiButtonBase-root MuiCardActionArea-root css-b6lsxj-MuiButtonBase-root-MuiCardActionArea-root"
+        disabled={false}
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <img
+          alt="The flag of Marshall Islands has a blue field with two broadening adjacent diagonal bands of orange and white that extend from the lower hoist-side corner to the upper fly-side corner of the field. A large white star with twenty-four rays — four large rays at the cardinal points and twenty smaller rays — is situated in the upper hoist-side corner above the diagonal bands."
+          className="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-ta2yni-MuiCardMedia-root"
+          onClick={[Function]}
+          src="https://flagcdn.com/mh.svg"
+          width="100%"
+        />
+        <div
+          className="MuiCardContent-root css-nw3cq4-MuiCardContent-root"
+        >
+          <div
+            className="MuiTypography-root MuiTypography-cardTitle MuiTypography-gutterBottom css-anmq6p-MuiTypography-root"
+          >
+            Marshall Islands
+          </div>
+          <span
+            className="MuiTypography-root MuiTypography-cardContent css-37jdci-MuiTypography-root"
+          >
+            <span
+              style={
+                Object {
+                  "fontWeight": 600,
+                }
+              }
+            >
+              Population:
+            </span>
+             
+            59,194
+             
+            <br />
+            <span
+              style={
+                Object {
+                  "fontWeight": 600,
+                }
+              }
+            >
+              Region: 
+            </span>
+             
+            Oceania
+             
+            <br />
+            <span
+              style={
+                Object {
+                  "fontWeight": 600,
+                }
+              }
+            >
+              Capital:
+            </span>
+             
+            Majuro
+          </span>
+        </div>
+        <span
+          className="MuiCardActionArea-focusHighlight css-1v2exvi-MuiCardActionArea-focusHighlight"
+        />
+      </button>
+    </div>
+  </section>,
+  ",",
+]
+`;

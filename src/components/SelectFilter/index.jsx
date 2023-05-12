@@ -84,8 +84,12 @@ const SelectFilter = ({ filterListener, filterContinent }) => {
   );
 };
 
+SelectFilter.defaultProps = {
+  filterListener: () => {},
+};
+
 SelectFilter.propTypes = {
-  filterListener: PropTypes.func.isRequired,
+  filterListener: PropTypes.func,
   filterContinent: PropTypes.string.isRequired,
 };
 

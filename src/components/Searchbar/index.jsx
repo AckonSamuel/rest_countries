@@ -63,8 +63,12 @@ const Searchbar = ({ textListener, searchText }) => {
   );
 };
 
+Searchbar.defaultProps = {
+  textListener: () => {},
+};
+
 Searchbar.propTypes = {
-  textListener: PropTypes.func.isRequired,
+  textListener: PropTypes.func,
   searchText: PropTypes.string.isRequired,
 };
 

@@ -76,4 +76,52 @@ describe('Redux Slice', () => {
             expect(action).toEqual(expectedAction);
         });
     });
+
+    describe('Reducer', () => {
+        it('should return the initial state', () => {
+            const initialState = {
+                countries: [],
+                error: '',
+                loading: false,
+                nameSearch: [],
+                regionFilter: [],
+                search: '',
+                filter: '',
+            };
+
+            const action = { type: 'UNKNOWN_ACTION' };
+            const nextState = reducer(undefined, action);
+
+            expect(nextState).toEqual(initialState);
+        });
+
+        it('should handle countriesFetch.pending action', () => {
+            const action = { type: 'countries/countriesFetch/pending' };
+            const nextState = reducer(undefined, action);
+
+            expect(nextState.loading).toBe(true);
+            expect(nextState.countries).toEqual({});
+            expect(nextState.error).toBe('');
+        });
+
+        it('should handle countriesFetch.fulfilled action', () => {
+            const payload = ['country1', 'country2'];
+            const action = { type: 'countries/countriesFetch/fulfilled', payload };
+            const nextState = reducer(undefined, action);
+
+            expect(nextState.countries).toEqual(payload);
+            expect(nextState.loading).toBe(false);
+            expect(nextState.error).toBe('');
+        });
+
+        it('should handle countriesFetch.rejected action', () => {
+            const error = 'Error message';
+            const action = { type: 'countries/countriesFetch/rejected', error: { message: error } };
+            const nextState = reducer(undefined, action);
+
+            expect(nextState.error).toBe(error);
+            expect(nextState.loading).toBe(false);
+            expect(nextState.countries).toEqual({});
+        });
+    });
 })

@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Filter from '../components/SelectFilter';
 
-it('renders correctly', () => {
+it('renders SelectFilter component correctly', () => {
   const filterContinent = 'Africa';
   const tree = renderer
     .create(

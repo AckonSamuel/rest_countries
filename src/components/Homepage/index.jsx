@@ -22,13 +22,22 @@ const Homepage = ({
   </>
 );
 
+Homepage.defaultProps = {
+  countries: [],
+  filteredSearch: [],
+  searchText: '',
+  filterContinent: '',
+  textListener: () => {},
+  filterListener: () => {},
+};
+
 Homepage.propTypes = {
-  countries: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
-  filteredSearch: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
-  searchText: PropTypes.string.isRequired,
-  textListener: PropTypes.func.isRequired,
-  filterListener: PropTypes.func.isRequired,
-  filterContinent: PropTypes.string.isRequired,
+  countries: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)),
+  filteredSearch: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)),
+  searchText: PropTypes.string,
+  textListener: PropTypes.func,
+  filterListener: PropTypes.func,
+  filterContinent: PropTypes.string,
 };
 
 export default Homepage;

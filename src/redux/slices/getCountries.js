@@ -1,6 +1,5 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 import BASE_URL from '../../common';
 
 const initialState = {
@@ -14,9 +13,18 @@ const initialState = {
 };
 
 export const countriesFetch = createAsyncThunk('countries/countriesFetch', async () => {
-  const res = await axios.get(`${BASE_URL}/all`);
+  try {
+    const response = await fetch(`${BASE_URL}/all`);
 
-  return res.data;
+    if (!response.ok) {
+      throw new Error('Failed to fetch countries');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error('Failed to fetch countries');
+  }
 });
 
 const countriesFetchSlice = createSlice({

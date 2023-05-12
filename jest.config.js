@@ -3,7 +3,10 @@ module.exports = {
   coverageDirectory: 'coverage',
   testEnvironment: 'node',
   transform: {
-    '^.+\\.jsx?$': 'babel-jest',
-    'node_modules/axios/index.js': 'babel-jest',
+    '^.+\\.[jt]sx?$': 'babel-jest',
+  },
+  transformIgnorePatterns: ['<rootDir>/node_modules/(?!(moduleName)/)'],
+  testEnvironmentOptions: {
+    esModuleInterop: true,
   },
 };

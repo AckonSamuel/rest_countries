@@ -53,6 +53,7 @@ exports[`renders correctly 1`] = `
         }
       }
       type="search"
+      value="ghana"
     />
   </div>
 </form>

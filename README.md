@@ -1,6 +1,6 @@
 #### Rest Countries
 > Description of the project: 
-This is a web app that displays a collection of countries from [this API](https://restcountries.com/#api-endpoints-v2).Users are able to:
+This is a web app that displays a collection of countries from [this API](https://restcountries.com/#api-endpoints-v2). Users are able to:
     <br />
     1. View the optimal layout for the site depending on their device's screen size
     <br />

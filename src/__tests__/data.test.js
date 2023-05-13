@@ -1,5 +1,5 @@
 import React from 'react';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
 import store from '../redux/configStore';
@@ -11,9 +11,9 @@ it('renders data component correctly', () => {
   const tree = renderer
     .create(
       <Provider store={store}>
-      <BrowserRouter>
-        <Data country={country} countries={countries} />
-      </BrowserRouter>
+        <BrowserRouter>
+          <Data country={country} countries={countries} />
+        </BrowserRouter>
       </Provider>,
     )
     .toJSON();

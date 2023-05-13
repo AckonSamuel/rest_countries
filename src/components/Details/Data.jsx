@@ -183,7 +183,7 @@ Data.propTypes = {
     population: PropTypes.number,
     capital: PropTypes.arrayOf(PropTypes.string),
   }),
-  
+
 };
 
 export default Data;

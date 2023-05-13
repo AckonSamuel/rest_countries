@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Searchbar from '../components/Searchbar';
 
-it('renders correctly', () => {
+it('renders searchbar component correctly', () => {
   const searchText = 'ghana';
 
   const tree = renderer

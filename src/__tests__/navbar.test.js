@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Navbar from '../components/Navbar';
 
-it('renders correctly', () => {
+it('renders navbar component correctly', () => {
   const tree = renderer
     .create(
       <Navbar />,

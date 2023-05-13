@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Homepage from '../components/Homepage';
 
-it('renders correctly', () => {
+it('renders homepage component correctly', () => {
   const tree = renderer
     .create(
       <Homepage />,

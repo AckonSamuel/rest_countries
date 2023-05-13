@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Data from '../components/Details/Data';
 import countries from '../assets/testdata';
 
-it('renders correctly', () => {
+it('renders data component correctly', () => {
   const country = countries[0];
   const tree = renderer
     .create(

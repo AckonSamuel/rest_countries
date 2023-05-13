@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import Card from '../components/Card';
 import countries from '../assets/testdata';
 
-it('renders correctly', () => {
+it('renders card component correctly', () => {
   const filteredSearch = [];
   const searchText = '';
 

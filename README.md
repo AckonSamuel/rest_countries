@@ -1,14 +1,21 @@
 #### Rest Countries
 > Description of the project: 
-This is a web app that displays a collection of countries from [https://restcountries.com/#api-endpoints-v2](this API).Users are able to:
+This is a web app that displays a collection of countries from [this API](https://restcountries.com/#api-endpoints-v2).Users are able to:
     <br />
     1. View the optimal layout for the site depending on their device's screen size
+    <br />
     2. See all countries from the API on the homepage
+    <br />
     3. Search for a country using an input field
+    <br />
     4. Filter countries by region
+    <br />
     5. Click on a country to see more detailed information on a separate page
+    <br />
     6. Click through to the border countries on the detail page
+    <br />
     7. Toggle the color scheme between light and dark mode
+    <br />
     This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template. 
 
 

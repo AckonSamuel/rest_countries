@@ -27,8 +27,8 @@ const BorderCountries = ({ borderArr }) => {
       { borderArr.map((country) => (
         <Item
           key={country}
-          onClick={() => goTo(`/details/${country}`)}
           sx={{ cursor: 'pointer' }}
+          onClick={() => goTo(`/details/${country}`)}
         >
           {country}
         </Item>

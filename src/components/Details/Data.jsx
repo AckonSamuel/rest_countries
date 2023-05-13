@@ -183,8 +183,7 @@ Data.propTypes = {
     population: PropTypes.number,
     capital: PropTypes.arrayOf(PropTypes.string),
   }),
+  
 };
-
-// Write an appropriate proptypes code for Data component
 
 export default Data;

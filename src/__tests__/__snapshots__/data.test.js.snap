@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders data component correctly 1`] = `
+<div
+  className="MuiBox-root css-1b1zfbw"
+>
+  <h2
+    className="MuiTypography-root MuiTypography-detailsTitle css-34wcpm-MuiTypography-root"
+  >
+    Marshall Islands
+  </h2>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4 css-480o17-MuiGrid-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-6 css-1fyyp8j-MuiGrid-root"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-detailsContent first-data css-s74x2d-MuiTypography-root"
+      >
+        <span>
+          <strong>
+            Native name
+            :
+          </strong>
+           
+          Marshall Islands
+          <br />
+        </span>
+        <span>
+          <strong>
+            Population
+            :
+          </strong>
+           
+          59,194
+          <br />
+        </span>
+        <span>
+          <strong>
+            Region
+            :
+          </strong>
+           
+          Oceania
+          <br />
+        </span>
+        <span>
+          <strong>
+            Sub Region
+            :
+          </strong>
+           
+          Micronesia
+          <br />
+        </span>
+        <span>
+          <strong>
+            Capital
+            :
+          </strong>
+           
+          Majuro
+          <br />
+        </span>
+      </span>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-6 css-1fyyp8j-MuiGrid-root"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-detailsContent first-data css-s74x2d-MuiTypography-root"
+      >
+        <span>
+          <strong>
+            Top Level Domain
+            :
+          </strong>
+           
+          .mh
+          <br />
+        </span>
+        <span>
+          <strong>
+            Currencies
+            :
+          </strong>
+           
+          United States dollar
+          <br />
+        </span>
+        <span>
+          <strong>
+            Languages
+            :
+          </strong>
+           
+          English, Marshallese
+          <br />
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;

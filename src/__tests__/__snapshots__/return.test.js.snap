@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders return component correctly 1`] = `
+<div
+  className="MuiBox-root css-17i0y7w"
+>
+  <div
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-16a289p-MuiPaper-root"
+  >
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-returnHome MuiButton-returnHomePrimary MuiButton-sizeMedium MuiButton-returnHomeSizeMedium MuiButton-root MuiButton-returnHome MuiButton-returnHomePrimary MuiButton-sizeMedium MuiButton-returnHomeSizeMedium css-1pjyywg-MuiButtonBase-root-MuiButton-root"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        data-testid="ArrowBackIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+        />
+      </svg>
+      <span
+        className="MuiTypography-root MuiTypography-returnHome css-s74x2d-MuiTypography-root"
+      >
+        Back
+      </span>
+    </button>
+  </div>
+</div>
+`;

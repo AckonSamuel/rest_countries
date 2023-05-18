@@ -1,41 +1,18 @@
-// react-router components
-import { Routes, Route } from "react-router-dom";
+import createCache from '@emotion/cache';
 
-// @mui material components
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { CacheProvider } from '@emotion/react';
-import CssBaseline from "@mui/material/CssBaseline";
-import createEmotionCache from "./createEmotionCache";
+const isBrowser = typeof document !== 'undefined';
 
-import routes from "./routes";
+// On the client side, Create a meta tag at the top of the <head> and set it as insertionPoint.
+// This assures that MUI styles are loaded first.
+// It allows developers to easily override MUI
+// styles with other styling solutions, like CSS modules.
+export default function createEmotionCache() {
+  let insertionPoint;
 
+  if (isBrowser) {
+    const emotionInsertionPoint = document.querySelector('meta[name="emotion-insertion-point"]');
+    insertionPoint = emotionInsertionPoint ?? undefined;
+  }
 
-const App = () => {
-
-  const cache = createEmotionCache();
-  const theme = createTheme();
-
-  const getRoutes = (allRoutes) =>
-    allRoutes.map((route) => {
-      if (route.collapse) {
-        return getRoutes(route.collapse);
-      }
-
-      if (route.route) {
-        return <Route exact path={route.route} element={route.component} key={route.key} />;
-      }
-
-      return null;
-    });
-
-  return (
-    <CacheProvider value={cache}>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Routes>{getRoutes(routes)}</Routes>
-    </ThemeProvider>
-    </CacheProvider>
-  );
+  return createCache({ key: 'mui-style', insertionPoint });
 }
-
-export default App;

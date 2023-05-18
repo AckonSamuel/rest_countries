@@ -1,8 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { SnackbarProvider } from 'notistack';
 import store from './redux/configStore';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -14,13 +12,9 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-        <SnackbarProvider maxSnack={4}>
-          <App />
-        </SnackbarProvider>
-      </Router>
+      <App />
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function

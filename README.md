@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# Rest Countries
+> Description of the project: 
+This is a web app that displays a collection of countries from [this API](https://restcountries.com/#api-endpoints-v2). Users are able to:
+    <br />
+    1. View the optimal layout for the site depending on their device's screen size
+    <br />
+    2. See all countries from the API on the homepage
+    <br />
+    3. Search for a country using an input field
+    <br />
+    4. Filter countries by region
+    <br />
+    5. Click on a country to see more detailed information on a separate page
+    <br />
+    6. Click through to the border countries on the detail page
+    <br />
+    7. Toggle the color scheme between light and dark mode
+    <br />
+    This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Built With
 
-In the project directory, you can run:
+- Major languages: HTML | CSS | JavaScript 
+- Library/Framework: Reactjs | Redux | Jest | Material UI
 
-### `npm start`
+## Live Demo
+[Live Demo Link](https://rest-countries-theta.vercel.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Video
+[Project Video Link](https://www.loom.com/share/8f4dc515d6d84ee180257ce16b34e8f1)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Preview
+![space](https://github.com/AckonSamuel/rest_countries/assets/92922987/0dae2ebc-7867-4f61-b0b1-9188f16ebf13)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting started
 
-### `npm run build`
+#### Clone this repository
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+$ git clone https://github.com/AckonSamuel/rest_countries.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### cd into directory
+```
+$ cd <relative-path>/rest_countries/
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### install dependencies
+``` run 
+$ npm i
+```
+#### run project
+```
+$ npm start
+```
 
-### `npm run eject`
+#### run tests
+```
+$ npm test
+```
+## Author
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+👤 **Ackon Samuel**
+- GitHub: [@AckonSamuel](https://github.com/AckonSamuel/)
+- Twitter: [@AckonSamuel2](https://twitter.com/dude_ackon)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/samuel-yaw-ackon/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+👤
+## 🤝 Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Contributions, issues, and feature requests are welcome!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Feel free to check the [issues page](../../issues/).
 
-## Learn More
+## Show your support
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Give a ⭐️ if you like this project!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Acknowledgments
 
-### Code Splitting
+- All the template colors, font, layout distribution for the whole project was given by Amalitech GmbH.
+## 📝 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](./MIT.md) licensed.

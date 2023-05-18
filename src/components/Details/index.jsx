@@ -1,5 +1,5 @@
+import { useSelector, shallowEqual } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Image from 'mui-image';
@@ -9,8 +9,10 @@ import Navbar from '../Navbar';
 import StyledContainer from '../StyledContainer';
 import pxToRem from '../../assets/theme/pxToRem';
 
-const Details = ({ countries }) => {
+const Details = () => {
   const { common } = useParams();
+
+  const countries = useSelector((state) => state.countryReducer.countries, shallowEqual);
 
   const theme = useTheme();
 
@@ -51,7 +53,6 @@ const Details = ({ countries }) => {
               <Grid item xs={12} lg={5}>
                 <Data
                   country={country}
-                  countries={countries}
                   maxWidth={pxToRem(600)}
                   maxHeight={pxToRem(320)}
                 />
@@ -61,10 +62,6 @@ const Details = ({ countries }) => {
       </StyledContainer>
     </>
   );
-};
-
-Details.propTypes = {
-  countries: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
 };
 
 export default Details;

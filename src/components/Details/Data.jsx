@@ -1,3 +1,4 @@
+import { useSelector, shallowEqual } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
@@ -6,7 +7,9 @@ import Typography from '@mui/material/Typography';
 import BorderCountries from './BorderCountries';
 import pxToRem from '../../assets/theme/pxToRem';
 
-const Data = ({ country, countries }) => {
+const Data = ({ country }) => {
+  const countries = useSelector((state) => state.countryReducer.countries, shallowEqual);
+
   const {
     name,
     region,
@@ -30,7 +33,11 @@ const Data = ({ country, countries }) => {
   };
 
   const filterCountries = countries.filter((coun) => coun.region === region);
-  const woek = () => filterCountries.length > 0 && extractCountry(filterCountries);
+  const woek = () => {
+    if (filterCountries.length > 0) { extractCountry(filterCountries); } else {
+      extractCountry(countries);
+    }
+  };
   woek();
 
   const countryData1 = {
@@ -181,7 +188,7 @@ Data.propTypes = {
     population: PropTypes.number,
     capital: PropTypes.arrayOf(PropTypes.string),
   }),
-  countries: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
+
 };
 
 export default Data;

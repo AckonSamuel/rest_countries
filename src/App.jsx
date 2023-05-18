@@ -95,7 +95,7 @@ const App = () => {
       )}
             key="okay"
           />
-          <Route path="/details/:common" element={<Details countries={countries} />} />
+          <Route path="/details/:common" element={<Details />} />
           ;
         </Routes>
       );

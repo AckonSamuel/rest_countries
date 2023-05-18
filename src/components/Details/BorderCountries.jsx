@@ -23,12 +23,12 @@ const BorderCountries = ({ borderArr }) => {
   };
 
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-betweem' }}>
+    <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
       { borderArr.map((country) => (
         <Item
           key={country}
-          onClick={() => goTo(`/details/${country}`)}
           sx={{ cursor: 'pointer' }}
+          onClick={() => goTo(`/details/${country}`)}
         >
           {country}
         </Item>

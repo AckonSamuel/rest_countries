@@ -23,7 +23,7 @@ const BorderCountries = ({ borderArr }) => {
   };
 
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-betweem' }}>
+    <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
       { borderArr.map((country) => (
         <Item
           key={country}

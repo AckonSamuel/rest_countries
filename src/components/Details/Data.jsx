@@ -9,6 +9,7 @@ import pxToRem from '../../assets/theme/pxToRem';
 
 const Data = ({ country }) => {
   const countries = useSelector((state) => state.countryReducer.countries, shallowEqual);
+
   const {
     name,
     region,
@@ -32,7 +33,11 @@ const Data = ({ country }) => {
   };
 
   const filterCountries = countries.filter((coun) => coun.region === region);
-  const woek = () => filterCountries.length > 0 && extractCountry(filterCountries);
+  const woek = () => {
+    if (filterCountries.length > 0) { extractCountry(filterCountries); } else {
+      extractCountry(countries);
+    }
+  };
   woek();
 
   const countryData1 = {

@@ -12,7 +12,7 @@ it('renders data component correctly', () => {
     .create(
       <Provider store={store}>
         <BrowserRouter>
-          <Data country={country} countries={countries} />
+          <Data country={country} />
         </BrowserRouter>
       </Provider>,
     )

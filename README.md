@@ -28,7 +28,7 @@ This is a web app that displays a collection of countries from [this API](https:
 [Live Demo Link](https://rest-countries-theta.vercel.app/)
 
 ## Project Video
-[Project Video Link]()
+[Project Video Link](https://www.loom.com/share/8f4dc515d6d84ee180257ce16b34e8f1)
 
 
 ## Preview

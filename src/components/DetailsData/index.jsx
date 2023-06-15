@@ -4,7 +4,7 @@ import { useTheme } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import BorderCountries from './BorderCountries';
+import BorderCountries from '../BorderCountries';
 import pxToRem from '../../assets/theme/pxToRem';
 
 const Data = ({ country }) => {

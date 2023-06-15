@@ -3,10 +3,10 @@ import { useParams } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Image from 'mui-image';
-import Data from './Data';
-import Return from './Return';
-import Navbar from '../Navbar';
-import StyledContainer from '../StyledContainer';
+import Data from '../../components/DetailsData';
+import Return from '../../components/Return';
+import Navbar from '../../components/Navbar';
+import StyledContainer from '../../components/StyledContainer';
 import pxToRem from '../../assets/theme/pxToRem';
 
 const Details = () => {

@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import CountryList from '../Card';
-import Searchbar from '../Searchbar';
-import SelectFilter from '../SelectFilter';
-import Navbar from '../Navbar';
-import StyledContainer from '../StyledContainer';
+import CountryList from '../../components/Card';
+import Searchbar from '../../components/Searchbar';
+import SelectFilter from '../../components/SelectFilter';
+import Navbar from '../../components/Navbar';
+import StyledContainer from '../../components/StyledContainer';
 
 const Homepage = ({
   countries, textListener, filteredSearch, filterContinent, filterListener, searchText,

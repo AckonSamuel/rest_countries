@@ -13,9 +13,9 @@ import ColorModeContext from './context';
 import createEmotionCache from './createEmotionCache';
 
 // react components
-import Homepage from './components/Homepage';
-import Welcome from './components/Welcome';
-import Details from './components/Details';
+import Homepage from './pages/Homepage';
+import Details from './pages/Details';
+import Welcome from './pages/Welcome';
 
 // redux funtions
 import {

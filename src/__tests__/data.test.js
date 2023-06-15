@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
 import store from '../redux/configStore';
-import Data from '../components/Details/Data';
+import Data from '../components/DetailsData';
 import countries from '../assets/testdata';
 
 it('renders data component correctly', () => {

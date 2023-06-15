@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom';
-import Return from '../components/Details/Return';
+import Return from '../components/Return';
 
 it('renders return component correctly', () => {
   const tree = renderer
